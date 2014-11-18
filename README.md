@@ -12,14 +12,14 @@ xblog/
   |
   |_____ apps/ : 所有的app都存放于此
   |        |_____ __init__.py
-  |        |_____ index/ : 负责主页的业务
+  |        |_____ home/ : 负责主页的业务
   |                 |_____ __init__.py
   |                 |_____ urls.py
   |                 |_____ views.py
   |                 |_____ models.py : 一个model对应于数据库中的一张表
   |
   |_____ templates/ : 模板存放于此
-           |_____ index/ : 对应于apps/index
+           |_____ home/ : 对应于apps/home
                     |_____ index.html                  	
 	
 ```
