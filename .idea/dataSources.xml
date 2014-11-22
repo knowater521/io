@@ -3,8 +3,10 @@
   <component name="DataSourceManagerImpl" format="xml" hash="1336207540">
     <data-source source="LOCAL" name="Django default" uuid="2fee5585-bd7a-4f1a-9b9b-4492897ff546">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/xblog</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
       <libraries />
     </data-source>
   </component>
