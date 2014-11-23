@@ -1,4 +1,7 @@
 from django.contrib import admin
 from apps.blog.models import Article
-# Register your models here.
-admin.site.register(Article)
+
+class ArticleAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Article, ArticleAdmin)

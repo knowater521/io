@@ -10,4 +10,4 @@ class Article(models.Model):
     is_published = models.BooleanField(db_index=True, default=True)
 
     def __unicode__(self):
-        return u"%s %s"%(self.title, self.create_timestamp)
+        return u"[%s](%s)"%(self.title, self.create_timestamp)
