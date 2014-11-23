@@ -1,4 +1,8 @@
 from django.contrib import admin
-from apps.dict.models import Dict
+from .models import Dict
 
-admin.site.register(Dict)
+class DictAdmin(admin.ModelAdmin):
+    alphabet_filter = 'english'
+    DEFAULT_ALPHABET = u''
+
+admin.site.register(Dict, DictAdmin)

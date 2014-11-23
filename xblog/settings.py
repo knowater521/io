@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'redisboard',
     'apps.blog',
-    'apps.dict'
+    'apps.dict',
+    'alphafilter'
 )
 
 MIDDLEWARE_CLASSES = (
