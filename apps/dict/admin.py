@@ -1,3 +1,4 @@
 from django.contrib import admin
+from apps.dict.models import Dict
 
-# Register your models here.
+admin.site.register(Dict)

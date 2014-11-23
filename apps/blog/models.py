@@ -1,7 +1,6 @@
 from django.db import models
 import datetime
 
-# Create your models here.
 class Article(models.Model):
     create_timestamp = models.DateTimeField(auto_now_add=True,default=datetime.datetime.now())
     update_timestamp = models.DateTimeField(auto_now_add=True,default=datetime.datetime.now())
