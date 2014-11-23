@@ -24,4 +24,7 @@ xblog/
 	
 ```
 
+## 环境准备
+- install [django-alphafilter](https://pypi.python.org/pypi/django-alphafilter)
+
 
