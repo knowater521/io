@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1336207540">
-    <data-source source="LOCAL" name="Django default" uuid="2fee5585-bd7a-4f1a-9b9b-4492897ff546">
-      <driver-ref>sqlite.xerial</driver-ref>
+  <component name="DataSourceManagerImpl" format="xml" hash="180246340">
+    <data-source source="LOCAL" name="MySQL - blog@127.0.0.1" uuid="99a563bf-27cf-4206-b601-904dc0e13933">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/xblog</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/blog</jdbc-url>
       <user-name>root</user-name>
       <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
       <libraries />
     </data-source>
   </component>

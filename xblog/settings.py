@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'redisboard'
+    'redisboard',
+    'apps.blog'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,7 +75,7 @@ TEMPLATE_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'xblog',
+        'NAME': 'blog',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': '127.0.0.1',
