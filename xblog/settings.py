@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'redisboard',
     'apps.blog',
     'apps.dict',
-    'alphafilter'
+    'alphafilter',
 )
 
 MIDDLEWARE_CLASSES = (
