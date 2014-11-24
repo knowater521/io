@@ -63,6 +63,10 @@ ROOT_URLCONF = 'xblog.urls'
 
 WSGI_APPLICATION = 'xblog.wsgi.application'
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
