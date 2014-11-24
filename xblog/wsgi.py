@@ -12,7 +12,3 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "xblog.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-
-
-import sys
-sys.path.append('/home/run/xblog/')

@@ -26,6 +26,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import sys
+if DEBUG:
+    sys.path.append('/home/run/xblog/')
 
 # Application definition
 
