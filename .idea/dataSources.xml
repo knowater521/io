@@ -15,7 +15,7 @@
     <data-source source="LOCAL" name="Django default" uuid="80c6d178-27e0-4ca8-b6b4-a140708a47d4">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/$PROJECT_DIR$/db.mysql</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/xblog</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/PyCharm30/jdbc-drivers/mysql-connector-license.txt</url>
