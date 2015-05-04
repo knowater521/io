@@ -4,4 +4,5 @@ from django.http import HttpResponse
 from .models import Article
 
 def Index(req):
-    return HttpResponse('hello world!')
+    articles = Article.objects.all()
+    return HttpResponse(articles)
