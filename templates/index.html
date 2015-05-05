@@ -4,9 +4,12 @@
     xus.io
 {% endblock %}
 
-{% block navi %}
-    home - works - about
-{% endblock %}
-
 {% block content %}
+    {% for article in articles %}
+        <div>{{ article.title }}</div>
+        <div>{{ article.create_date }}</div>
+        <div>{{ article.content }}</div>
+
+    {% endfor %}
+
 {% endblock %}
