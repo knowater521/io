@@ -8,7 +8,8 @@
     {% for article in articles %}
         <div>{{ article.title }}</div>
         <div>{{ article.create_date }}</div>
-        <div>{{ article.content | truncatechars:200}}</div>
+        <div>{{ article.content | safe | truncatechars:200 | linebreaks}}</div>
+        <div><a href="{{ article.content }}">read more</a></div>
 
     {% endfor %}
 
