@@ -2410,13 +2410,16 @@
     </table>
     <table name="blog_article" schema="" catalog="xblog" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="title" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="author" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="author" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
       <column name="content" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
       <column name="create_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
       <column name="is_publish" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="modify_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="category_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="blog_article_category_id_45371416e1252d6d_fk_blog_category_id" columns="category_id" ref-table="blog_category" ref-schema="" ref-catalog="xblog" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="blog_article_b583a629" unique="false" columns="category_id"/>
     </table>
     <table name="django_admin_log" schema="" catalog="xblog" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
