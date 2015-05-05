@@ -11,7 +11,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = '类型'
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 class Tag(models.Model):
@@ -20,7 +20,7 @@ class Tag(models.Model):
     class Meta:
         verbose_name_plural = '标签'
 
-    def __str__(self):
+    def __unicode__(self):
         return self.slug
 
 class Article(models.Model):
@@ -37,7 +37,7 @@ class Article(models.Model):
     class Meta:
         verbose_name_plural = '文章'
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
 
