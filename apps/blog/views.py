@@ -18,4 +18,4 @@ def About(req):
     return render_to_response('about.html', context)
 
 class ArticleDetailView(DetailView):
-    pass
+    model = Article
