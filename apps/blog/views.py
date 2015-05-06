@@ -19,4 +19,4 @@ def About(req):
 
 class ArticleDetailView(DetailView):
     model = Article
-    template_name = 'index.html'
+    template_name = 'article.html'
