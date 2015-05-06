@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.utils import timezone
 import datetime
 
 class Category(models.Model):
@@ -26,8 +27,8 @@ class Tag(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=128, default='anonymous')
-    create_date = models.DateField(auto_now_add=True, default=datetime.datetime.now())
-    modify_date = models.DateField(auto_now=True, default=datetime.datetime.now())
+    create_date = models.DateField(auto_now_add=True)
+    modify_date = models.DateField(auto_now=True)
     category = models.ForeignKey(Category)
     tag = models.ManyToManyField(Tag)
     text = models.TextField(default='')
