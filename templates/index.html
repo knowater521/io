@@ -1,15 +1,13 @@
 {% extends "base.html" %}
+{% load django_markdown %}
 
 {% block content %}
     {% for article in articles %}
         <div><a href="{% url "article_detail" slug=article.slug %}">{{ article.title }}</a></div>
         <div>{{ article.create_date }}</div>
-        <div>{{ article.text | safe | truncatechars:200}}</div>
+        <div>{{ article.text | markdown | safe | truncatechars:200}}</div>
         <div><a href="{% url "article_detail" slug=article.slug %}">read more</a></div></br>
     {% endfor %}
-
-
-
 
 
     <div class="pagination">
@@ -27,5 +25,5 @@
             {% endif %}
         </span>
     </div>
-    
+
 {% endblock %}
