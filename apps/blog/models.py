@@ -30,7 +30,7 @@ class Article(models.Model):
     modify_date = models.DateField(auto_now=True, default=datetime.datetime.now())
     category = models.ForeignKey(Category)
     tag = models.ManyToManyField(Tag)
-    content = models.TextField(default='')
+    text = models.TextField(default='')
     is_publish = models.BooleanField(default=True)
     slug = models.SlugField(max_length=255, unique=True)
 
