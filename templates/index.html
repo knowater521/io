@@ -4,7 +4,7 @@
     {% for article in articles %}
         <div><a href="{% url "article_detail" slug=article.slug %}">{{ article.title }}</a></div>
         <div>{{ article.create_date }}</div>
-        <div>{{ article.text | safe | truncatechars:200 | linebreaks}}</div>
-        <div><a href="{% url "article_detail" slug=article.slug %}">read more</a></div>
+        <div>{{ article.text | safe | truncatechars:200}}</div>
+        <div><a href="{% url "article_detail" slug=article.slug %}">read more</a></div></br>
     {% endfor %}
 {% endblock %}
