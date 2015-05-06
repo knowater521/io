@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django_markdown.models import MarkdownField
 from django.utils import timezone
 import datetime
 
@@ -31,7 +32,7 @@ class Article(models.Model):
     modify_date = models.DateField(auto_now=True)
     category = models.ForeignKey(Category)
     tag = models.ManyToManyField(Tag)
-    text = models.TextField(default='')
+    text = MarkdownField(null=True)
     is_publish = models.BooleanField(default=True)
     slug = models.SlugField(max_length=255, unique=True)
 
@@ -40,7 +41,6 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
-
 
 
 
