@@ -32,6 +32,7 @@ class Article(models.Model):
     tag = models.ManyToManyField(Tag)
     content = models.TextField(default='')
     is_publish = models.BooleanField(default=True)
+    slug = models.SlugField(max_length=255, unique=True)
 
     class Meta:
         verbose_name_plural = '文章'
