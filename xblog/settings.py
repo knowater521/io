@@ -52,8 +52,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-SITE_ID = 1
-
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
 
 
