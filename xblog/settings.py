@@ -38,8 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sorl.thumbnail',
+    'adminfiles',
     'apps.blog',
     'django_markdown',
+    #'oembed',
+    'file_picker',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,3 +102,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/data/static/'
 
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = '/data/media/' 
+
+JQUERY_URL = 'js/jquery.min.js'
