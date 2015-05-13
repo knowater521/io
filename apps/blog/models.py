@@ -44,4 +44,7 @@ class Article(models.Model):
 
 
 
-
+class Test(models.Model):
+    context = models.TextField(null=True) 
+    def __unicode__(self):
+        return self.context
