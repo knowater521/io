@@ -104,5 +104,6 @@ STATIC_ROOT = '/data/static/'
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = '/data/media/' 
 
+
 JQUERY_URL = 'js/jquery.min.js'
 
