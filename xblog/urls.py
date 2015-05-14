@@ -14,6 +14,5 @@ urlpatterns = patterns('',
     url(r'^adminfiles/', include('adminfiles.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
-    #url(r'^file-picker/', include(file_picker.site.urls)),
-#    url(r'^', include('apps.blog.urls')),
+    url(r'^', include('apps.blog.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
