@@ -26,38 +26,13 @@
         </span>
     </div>-->
 
-    <!--<nav>
-        <ul class="pager">
-            {% if articles.has_previous %}
-                <a href="?page={{ contacts.previous_page_number }}">previous123</a>
-            {% endif %}
-
-            <span class="current">
-                Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
-            </span>
-
-            {% if articles.has_next %}
-                <a href="?page={{ articles.next_page_number }}">next</a>
-            {% endif %}
-        </ul>
-    </nav>-->
-
     <nav>
-        <ul class="pager">
-            {% if articles.has_previous %}
-                <li><a href="?page={{ contacts.previous_page_number }}">Prev</a></li>
-            {% endif %}
-
-            <!--<span class="current">
-                Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
-            </span>-->
-
-
-            
-
-            {% if articles.has_next %}
-                <li><a href="?page={{ articles.next_page_number }}">Next</a></li>
-            {% endif %}
+        <ul class="pagination">
+             <li><a href="{% if articles.has_previous %}?page={{articles.previous_page_number}}{% endif %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+             {% for page_num in articles.paginator.page_range %}
+                 <li class="{% if page_num == articles.number %}active{% endif %}"><a href="?page={{page_num}}">{{page_num}}<span class="sr-only">(current)</span></a></li>
+             {% endfor %}
+             <li><a href="{% if articles.has_next %}?page={{articles.next_page_number}}{% endif %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
         </ul>
     </nav>
 
