@@ -17,15 +17,15 @@ def Index(req):
     except EmptyPage:
         articles = paginator.page(paginator.num_pages)
 
-    context = {'articles': articles}
+    context = {'articles':articles, 'nbar':'index'}
     return render_to_response('index.html', context)
 
 def Works(req):
-    context = {'title': 'sfsdxxxxf'}
+    context = {'title':'sfsdxxxxf', 'nbar':'works'}
     return render_to_response('works.html', context)
 
 def About(req):
-    context = {'title': 'sfsdxxxxf'}
+    context = {'title':'sfsdxxxxf', 'nbar':'about'}
     return render_to_response('about.html', context)
 
 class ArticleDetailView(DetailView):

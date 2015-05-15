@@ -34,9 +34,9 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="{% url "index" %}">Home</a>
-          <a class="blog-nav-item" href="{% url "works" %}">Works</a>
-          <a class="blog-nav-item" href="{% url "about" %}">About</a>
+          <a class="blog-nav-item {% if nbar == 'index' %}active{% endif %}" href="{% url "index" %}">Home</a>
+          <a class="blog-nav-item {% if nbar == 'works' %}active{% endif %}" href="{% url "works" %}">Works</a>
+          <a class="blog-nav-item {% if nbar == 'about' %}active{% endif %}" href="{% url "about" %}">About</a>
         </nav>
       </div>
     </div>
