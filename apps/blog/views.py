@@ -7,8 +7,6 @@ from collections import defaultdict
 from collections import OrderedDict
 from .models import Article
 
-
-
 def Index(req):
     articles = Article.objects.order_by('-create_date')
     paginator = Paginator(articles, 6)
