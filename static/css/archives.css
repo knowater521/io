@@ -1,0 +1,39 @@
+
+/*ul.listing {
+    margin-top: 1em;
+}
+
+ul.listing li {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.listing li.listing-item {
+    padding: .2em 0 .2em 2em;
+}
+
+ul.listing li.listing-seperator {
+    font-family: "telexregular", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; 
+}
+
+ul.listing li.listing-seperator:before {
+    content: "xx ";
+    color: #ccc; 
+}*/
+
+
+dt {
+    font-size: 1.5em;
+}
+
+dd {
+    color: #ccc;
+    font-size: .9em;
+    padding: .1em 0 .2em .6em; /* top, right, bottom, left */
+}
+
+.postdate {
+    font-size: .9em;            
+}
+
+

@@ -5,7 +5,7 @@
 {% endblock page_css %}
 
 {% block content %}
-<div id="blog-archives">
+<!--<div id="blog-archives">
     {% for year, articles in archives.items %}
         <h3>{{year}}</h3>
         {% for article in articles %}
@@ -23,6 +23,19 @@
             </article>                       
         {% endfor %}
     {% endfor %}
-</div>
+</div>-->
+
+<dl>
+    {% for year, articles in archives.items %}
+    <dt>{{year}}</dt>
+        {% for article in articles %}
+            <dd>
+                <span class="postdate">{{article.create_date|date:"m/d"}}</span>
+                <a href="{% url "article_detail" slug=article.slug %}">{{article.title}}</a>
+            </dd>
+        {% endfor %}
+    {% endfor %}
+</dl>
+
 {% endblock content %}
 
