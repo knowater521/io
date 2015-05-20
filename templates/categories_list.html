@@ -1,0 +1,16 @@
+<p>
+    <!--<ul class="{% if not categories %}no-{% endif %}categories">
+      {% for category in categories %}
+      <li {% if category.slug == context_category.slug %} class="current"{% endif %}>
+      </li>
+      {% empty %}
+      <li>
+      </li>
+      {% endfor %}
+    </ul>-->
+    {% for category in categories %}
+        <li><a href="{{ category.GetAbsoluteURL }}">{{ category.name }}({{ category.GetArticleNum }})</a></li>
+    {% endfor %}
+</p>
+
+

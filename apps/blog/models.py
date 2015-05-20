@@ -3,6 +3,7 @@
 from django.db import models
 from django_markdown.models import MarkdownField
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 import datetime
 
 class Category(models.Model):
@@ -15,6 +16,12 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def GetArticleNum(self):
+	return Article.objects.filter(category=self).count()
+    
+    def GetAbsoluteURL(self):
+        return reverse('category_home', kwargs={'slug':self.slug})
 
 class Tag(models.Model):
     slug = models.SlugField(max_length=128, unique=True)

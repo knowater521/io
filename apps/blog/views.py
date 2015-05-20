@@ -1,11 +1,10 @@
-from django.shortcuts import render
-from django.shortcuts import render_to_response
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
-from .models import Article
+from .models import Article, Category
 
 def Index(req):
     articles = Article.objects.order_by('-create_date')
@@ -54,4 +53,24 @@ def About(req):
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article.html'
+
+def CategoryHome(req, slug):
+    cur_category = get_object_or_404(Category, slug=slug)
+    articles = Article.objects.filter(category=cur_category).order_by('-create_date')
+    paginator = Paginator(articles, 6)
+    page_idx = req.GET.get('page')
+    try:
+        articles = paginator.page(page_idx)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+
+    context = {'articles':articles, 'nbar':'categories_home'}
+    return render_to_response('categories_home.html', context)
+
+
+
+
+
 
