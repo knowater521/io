@@ -24,6 +24,7 @@ class Category(models.Model):
         return reverse('category_home', kwargs={'slug':self.slug})
 
 class Tag(models.Model):
+    name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=128, unique=True)
 
     class Meta:
