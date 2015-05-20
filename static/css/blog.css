@@ -3,7 +3,7 @@
  */
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Open Sans','Helvetica Neue',"Hiragino Sans GB",sans-serif, Arial,/*'Microsoft YaHei',*/Verdana,"BitStream vera Sans",Tahoma,Helvetica,Sans-serif
   color: #555;
 }
 
@@ -127,8 +127,8 @@ h6, .h6 {
   text-align: left;
 }
 .pager > li > a {
-  width: 120px;
-  padding: 5px 20px;
+  width: 140px;
+  padding: 10px 20px;
   text-align: center;
   border-radius: 30px;
 }
