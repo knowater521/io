@@ -31,7 +31,13 @@ class Tag(models.Model):
         verbose_name_plural = '标签'
 
     def __unicode__(self):
-        return self.slug
+        return self.name
+
+    def GetArticleNum(self):
+        return Article.objects.filter(tag=self).count()
+    
+    def GetAbsoluteURL(self):
+        return reverse('tag_home', kwargs={'slug':self.slug})
 
 class Article(models.Model):
     title = models.CharField(max_length=255)

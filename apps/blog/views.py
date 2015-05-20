@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
-from .models import Article, Category
+from .models import Article, Category, Tag
 
 def Index(req):
     articles = Article.objects.order_by('-create_date')
@@ -68,6 +68,26 @@ def CategoryHome(req, slug):
 
     context = {'articles':articles, 'nbar':'categories_home'}
     return render_to_response('categories_home.html', context)
+
+def TagHome(req, slug):
+    cur_tag = get_object_or_404(Tag, slug=slug)
+    articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
+    paginator = Paginator(articles, 6)
+    page_idx = req.GET.get('page')
+    try:
+        articles = paginator.page(page_idx)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+
+    context = {'articles':articles, 'nbar':'tags_home'}
+    return render_to_response('tags_home.html', context)
+
+
+
+
+
 
 
 
