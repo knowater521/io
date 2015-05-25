@@ -69,7 +69,6 @@ class Article(models.Model):
         return self.title
 
 
-
 class Test(models.Model):
     context = models.TextField(null=True) 
     def __unicode__(self):

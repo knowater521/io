@@ -1,5 +1,6 @@
 from django import template
 from apps.blog.models import Category, Tag
+from random import shuffle
 
 register = template.Library()
 
@@ -10,7 +11,7 @@ def GetCategories(context):
 
 @register.inclusion_tag('tags_cloud.html', takes_context=True)
 def GetTags(context):
-	tags = Tag.objects.all()
+	tags = Tag.objects.all().order_by('?')
 	return {'tags':tags}
 	
 
