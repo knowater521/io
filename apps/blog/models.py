@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.db.models import Count, Max
 from django_markdown.models import MarkdownField
 from django.utils import timezone
 from django.core.urlresolvers import reverse
@@ -32,10 +33,19 @@ class Tag(models.Model):
 
     def __unicode__(self):
         return self.name
-
-    def GetArticleNum(self):
-        return Article.objects.filter(tag=self).count()
+   
+    def CalFontSizeOfTag(self):
+        min_font_size = 11
+        max_font_size = 35
+        # blog_article_tag table
+        # select max(tag_ref_num) from(select count(*) as tag_ref_num from blog_article_tag group by tag_id) as max_ref_num;
+        max_tag_num = Article.tag.through.objects.values('tag_id').annotate(tag_ref_num=Count('*')).aggregate(max_ref_num=Max('tag_ref_num'))['max_ref_num']
     
+    def GetArticleNum(self):
+        self.CalFontSizeOfTag()
+        return Article.objects.filter(tag=self).count()
+        
+
     def GetAbsoluteURL(self):
         return reverse('tag_home', kwargs={'slug':self.slug})
 
