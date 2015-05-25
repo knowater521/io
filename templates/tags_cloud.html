@@ -1,8 +1,9 @@
-<p>
-    {% for tag in tags %}
-        <a href="{{ tag.GetAbsoluteURL }}" title="1 topic" style="font-size: 11pt;">{{ tag.name }}</a>
-    {% endfor %}
+{% block page_css %}
+    <link href="/static/css/tag_cloud.css" rel="stylesheet">
+{% endblock page_css %}
 
-</p>
+{% for tag in tags %}
+    <a href="{{ tag.GetAbsoluteURL }}" title="1 topic" style="font-size: 11px;">{{ tag.name }}</a>
+{% endfor %}
 
 
