@@ -43,7 +43,7 @@
    <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item {% if nbar == 'index' %}active{% endif %}" href="{% url "index" %}">Home</a>
+          <a class="blog-nav-item {% if nbar == 'index' %}active{% endif %}" href="{% url "index" %}"><span class="glyphicon glyphicon-home"></span></a>
           <a class="blog-nav-item {% if nbar == 'archives' %}active{% endif %}" href="{% url "archives" %}">Archives</a>
           <a class="blog-nav-item {% if nbar == 'works' %}active{% endif %}" href="{% url "works" %}">Works</a>
           <a class="blog-nav-item {% if nbar == 'about' %}active{% endif %}" href="{% url "about" %}">About</a>

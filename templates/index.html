@@ -2,22 +2,21 @@
 {% load django_markdown %}
 
 {% block content %}
-    {% for article in articles %}
-        <h2 class="blog-post-title"><a href="{% url "article_detail" slug=article.slug %}">{{ article.title }}</a></h2>
-        <p class="blog-post-meta">{{ article.create_date | date:"Y-m-d" }} by {{ article.author }}</p>
-        <p>{{ article.text | markdown | safe | truncatechars:100 | linebreaks }}</p>
-        <div><a href="{% url "article_detail" slug=article.slug %}">read more</a></div>
-    {% endfor %}
+{% for article in articles %}
+  <h2 class="blog-post-title"><a href="{% url "article_detail" slug=article.slug %}">{{ article.title }}</a></h2>
+    <p class="blog-post-meta"><span class="glyphicon glyphicon-calendar"></span>{{ article.create_date | date:"Y-m-d" }} <span class="glyphicon glyphicon-user"></span> <a href="www.baidu.com">{{ article.author }}</a></p>
+    <p>{{ article.text | markdown | safe | truncatechars:100 | linebreaks }}</p>
+    <div><a href="{% url "article_detail" slug=article.slug %}">read more</a></div>
+{% endfor %}
 
-
-    <nav>
-        <ul class="pagination">
-             <li><a href="{% if articles.has_previous %}?page={{articles.previous_page_number}}{% endif %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-             {% for page_num in articles.paginator.page_range %}
-                 <li class="{% if page_num == articles.number %}active{% endif %}"><a href="?page={{page_num}}">{{page_num}}<span class="sr-only">(current)</span></a></li>
-             {% endfor %}
-             <li><a href="{% if articles.has_next %}?page={{articles.next_page_number}}{% endif %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-        </ul>
-    </nav>
+<nav>
+  <ul class="pagination">
+    <li><a href="{% if articles.has_previous %}?page={{articles.previous_page_number}}{% endif %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+      {% for page_num in articles.paginator.page_range %}
+        <li class="{% if page_num == articles.number %}active{% endif %}"><a href="?page={{page_num}}">{{page_num}}<span class="sr-only">(current)</span></a></li>
+      {% endfor %}
+    <li><a href="{% if articles.has_next %}?page={{articles.next_page_number}}{% endif %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
 
 {% endblock %}
