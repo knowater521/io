@@ -3,7 +3,7 @@
 {% endblock page_css %}
 
 {% for tag in tags %}
-    <a href="{{ tag.GetAbsoluteURL }}" title="1 topic" style="font-size: 11px;">{{ tag.name }}</a>
+    <a href="{{ tag.GetAbsoluteURL }}" title="{{ tag.GetArticleNum }} topic" style="font-size: {{ tag.CalFontSizeOfTag }}px;">{{ tag.name }}</a>
 {% endfor %}
 
 
