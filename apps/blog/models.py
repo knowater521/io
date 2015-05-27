@@ -41,7 +41,7 @@ class Tag(models.Model):
         min_font_size = 11
         max_font_size = 35
         tag_ref_num = self.GetArticleNum()
-        # blog_article_tag table
+        # query blog_article_tag table
         # select max(tag_ref_num) from(select count(*) as tag_ref_num from blog_article_tag group by tag_id) as max_ref_num;
         max_tag_num = Article.tag.through.objects.values('tag_id').annotate(tag_ref_num=Count('*')).aggregate(max_ref_num=Max('tag_ref_num'))['max_ref_num']
         if max_tag_num <= 0:
@@ -68,6 +68,12 @@ class Article(models.Model):
     def __unicode__(self):
         return self.title
 
+    def GetTags(self):
+        # get all Tag objects for this Article.
+        return Article.objects.get(id=self.id).tag.all()
+
+    def GetCategory(self):
+        return Article.objects.get(id=self.id).category
 
 class Test(models.Model):
     context = models.TextField(null=True) 

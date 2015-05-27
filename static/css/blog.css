@@ -163,6 +163,16 @@ h6, .h6 {
   font-size: 13px;
 }
 
+.blog-post-meta .tags-icon {
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+.blog-post-meta .folder-open-icon {
+  padding-left: 10px;
+  font-size: 13px;
+}
+
 .blog-post-meta .date {
   /* padding-left: 1px; */
   font-size: 13px;
@@ -173,7 +183,20 @@ h6, .h6 {
   font-size: 13px;
 }
 
+.blog-post-meta .tags {
+  /* padding-left: 1px; */
+  font-size: 13px;
+}
 
+.blog-post-meta .folder-open {
+  /* padding-left: 1px; */
+  font-size: 13px;
+}
+
+.blog-post-readmore {
+  /* font-size: 13px; */
+  margin-bottom: 20px;
+}
 
 
 
