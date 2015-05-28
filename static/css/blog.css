@@ -200,12 +200,14 @@ h6, .h6 {
   font-size: 13px;
 }
 
-.blog-post-readmore {
+.blog-post .readmore {
   /* font-size: 13px; */
   margin-bottom: 20px;
 }
 
-
+.blog-post .line {
+  margin-top: -10px;
+}
 
 
 
