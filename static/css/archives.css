@@ -5,7 +5,7 @@ dt {
 dd {
     color: #ccc;
     font-size: .9em;
-    padding: .1em 0 .2em .6em; /* top, right, bottom, left */
+    padding: .1em 0 .2em .3em; /* top, right, bottom, left */
 }
 
 .postdate {
