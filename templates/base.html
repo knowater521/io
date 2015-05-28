@@ -40,23 +40,56 @@
   <body>
 
     
-   <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item {% if nbar == 'index' %}active{% endif %}" href="{% url "index" %}"><span class="glyphicon glyphicon-home"></span></a>
-          <a class="blog-nav-item {% if nbar == 'archives' %}active{% endif %}" href="{% url "archives" %}">Archives</a>
-          <a class="blog-nav-item {% if nbar == 'works' %}active{% endif %}" href="{% url "works" %}">Works</a>
-          <a class="blog-nav-item {% if nbar == 'about' %}active{% endif %}" href="{% url "about" %}">About</a>
-        </nav>
-      </div>
-    </div>
-
+  <div class="blog-masthead">
     <div class="container">
+      <nav class="blog-nav">
+          
+        <a class="blog-nav-item {% if nbar == 'index' %}active{% endif %}" href="{% url "index" %}"><span class="glyphicon glyphicon-home"></span></a>
+        <a class="blog-nav-item {% if nbar == 'archives' %}active{% endif %}" href="{% url "archives" %}">Archives</a>
+        <a class="blog-nav-item {% if nbar == 'works' %}active{% endif %}" href="{% url "works" %}">Works</a>
+        <a class="blog-nav-item {% if nbar == 'about' %}active{% endif %}" href="{% url "about" %}">About</a>
 
-      <div class="blog-header">
-        <h1 class="blog-title">Independent thinking.</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-      </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="blog-header">
+
+
+<!-- <ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol> -->
+
+
+
+
+
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+
+
+
+
+
+
+
+
+       
+ 
+        <!-- <h1 class="blog-title">Independent thinking.</h1>
+        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p> -->
+      
+      </div><!-- /blog-header -->
 
 
       <div class="row">
