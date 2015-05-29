@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-{% load blog_extras %}
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -12,23 +9,17 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>xblog</title>
+    <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
-    <link href="/static/css/blog.css" rel="stylesheet">
-
-    {% block page_css %}
-
-    {% endblock page_css %}
-
-
+    <link href="starter-template.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/static/js/ie-emulation-modes-warning.js"></script>
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,113 +30,42 @@
 
   <body>
 
-    
-  <div class="blog-masthead">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
     <div class="container">
-      <nav class="blog-nav">
-          
-        <a class="blog-nav-item {% if nbar == 'index' %}active{% endif %}" href="{% url "index" %}"><span class="glyphicon glyphicon-home"></span></a>
-        <a class="blog-nav-item {% if nbar == 'archives' %}active{% endif %}" href="{% url "archives" %}">Archives</a>
-        <a class="blog-nav-item {% if nbar == 'works' %}active{% endif %}" href="{% url "works" %}">Works</a>
-        <a class="blog-nav-item {% if nbar == 'about' %}active{% endif %}" href="{% url "about" %}">About</a>
 
-      </nav>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <div class="blog-header">
-
-
-<!-- <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
-</ol> -->
-
-
-
-
-
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
-          </span>
-        </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
-
-
-
-
-
-
-
-
-       
- 
-        <!-- <h1 class="blog-title">Independent thinking.</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p> -->
-      
-      </div><!-- /blog-header -->
-
-
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
-
-          {% block content %}
-          {% endblock %}
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Tag Cloud</h4>
-            <p class="tag-cloud">
-              {% GetTags %}
-            </p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Category</h4>
-            <ol class="list-unstyled">
-            {% GetCategories %}
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="http://stackoverflow.com/users/4037409/xus?tab=profile">Stack Overflow</a></li>
-              <li><a href="https://github.com/xushvai">GitHub</a></li>
-              <li><a href="https://twitter.com/xushvai">Twitter</a></li>
-              <li><a href="https://www.facebook.com/xushvai">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
+      <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
 
     </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
