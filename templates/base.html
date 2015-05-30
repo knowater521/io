@@ -3,7 +3,6 @@
 {% load blog_extras %}
 
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
     <link href="../static/css/search.css" rel="stylesheet">
-    <link href="../static/css/tmp.css" rel="stylesheet">
+    <link href="../static/css/blog.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -83,17 +82,6 @@
     </nav>
 
 
-
-    <!--<div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
-    </div>-->
-    <!-- /.container -->
-
     <div class="container">
         <div class="row">
             <div class="col-sm-8 blog-main">
@@ -109,10 +97,15 @@
                         {% GetTags %}
                     </p>
                 </div>
+               
+                <div class="sidebar-module">
+                    <h4>Category</h4>
+                    <ol class="list-unstyled">
+                        {% GetCategories %}
+                    </ol>
+                </div>
             </div>
             <!-- /.blog-sidebar -->
-
-
 
 
         </div>
