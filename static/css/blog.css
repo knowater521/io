@@ -167,53 +167,8 @@ h6, .h6 {
     font-size: 12px;
 }
 
-.blog-post-meta .date-icon {
-  padding-left: 4px;
-  font-size: 13px;
-  color: #248dc1 !important;
-}
-
-.blog-post-meta .time-icon {
-  padding-left: 4px;
-  font-size: 13px;
-}
-
-.blog-post-meta .author-icon {
-  padding-left: 10px;
-  font-size: 13px;
-}
-
-.blog-post-meta .tags-icon {
-  padding-left: 10px;
-  font-size: 13px;
-}
-
-.blog-post-meta .folder-open-icon {
-  padding-left: 10px;
-  font-size: 13px;
-}
-
-.blog-post-meta .date {
+.blog-post-meta .icon-text {
   /* padding-left: 1px; */
-  font-size: 13px;
-}
-
-.blog-post-meta .time {
-  font-size: 13px;
-}
-
-.blog-post-meta .author {
-  /* padding-left: 1px; */
-  font-size: 13px;
-}
-
-.blog-post-meta .tags {
-  padding-left: 1px;
-  font-size: 13px;
-}
-
-.blog-post-meta .folder-open {
-  padding-left: 1px;
   font-size: 13px;
 }
 
