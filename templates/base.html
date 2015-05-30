@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+{% load blog_extras %}
+
 <html lang="en">
 
 <head>
@@ -52,16 +55,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="{% if nbar == 'index' %}active{% endif %}">
-                        <a href="{% url 'index' %}"> Posts</a>
+                        <a href="{% url 'index' %}"> POSTS</a>
                     </li>
                     <li class="{% if nbar == 'archives' %}active{% endif %}">
-                        <a href="{% url 'archives' %}"> Archives</a>
+                        <a href="{% url 'archives' %}"> ARCHIVES</a>
                     </li>
                     <li class="{% if nbar == 'works' %}active{% endif %}">
-                        <a href="{% url 'works' %}"> Works</a>
+                        <a href="{% url 'works' %}"> WORKS</a>
                     </li>
                     <li class="{% if nbar == 'about' %}active{% endif %}">
-                        <a href="{% url 'about' %}"> About</a>
+                        <a href="{% url 'about' %}"> ABOUT</a>
                     </li>
 				
 	            <form action="" class="navbar-form navbar-right search-form">
@@ -81,14 +84,41 @@
 
 
 
-    <div class="container">
+    <!--<div class="container">
 
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
 
-    </div><!-- /.container -->
+    </div>-->
+    <!-- /.container -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <!-- /.blog-main -->
+    
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module">
+                    <h4>Tag Cloud</h4>
+                    <p class="tag-cloud">
+                        {% GetTags %}
+                    </p>
+                </div>
+            </div>
+            <!-- /.blog-sidebar -->
+
+
+
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
