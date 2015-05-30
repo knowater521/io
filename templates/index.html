@@ -6,10 +6,12 @@
 <div class="blog-post">
     <h2 class="blog-post-title"><a href="{% url "article_detail" slug=article.slug %}">{{article.title}}</a></h2>
     <p class="blog-post-meta">
-      <span class="glyphicon glyphicon-calendar date-icon"></span>
-      <span class="date">{{article.create_date|date:"Y/m/d"}}</span>
-      <span class="glyphicon glyphicon-user author-icon"></span> 
-      <span class="author"><a href="www.baidu.com">{{article.author}}</span></a>
+        <span class="glyphicon glyphicon-calendar icon"></span>
+        <span class="icon-text">{{article.create_date|date:"Y/m/d"}}</span>
+        <span class="glyphicon glyphicon-time icon"></span>
+        <span class="icon-text">{{article.create_date|time:"H:i:s"}}</span>
+        <span class="glyphicon glyphicon-user icon"></span> 
+        <span class="icon-text"><a href="www.baidu.com">{{article.author}}</span></a>
     </p>
 
     <p>
@@ -23,10 +25,11 @@
     </p>
 
     <p class="blog-post-meta">
-        <span class="glyphicon glyphicon-folder-open folder-open-icon"></span>
-        <span class="folder-open">{{article.GetCategory}}</span>
-        <span class="glyphicon glyphicon-tags tags-icon"></span>
-        <span class="tags">
+        <span class="glyphicon glyphicon-folder-open icon"></span>
+        <span class="icon-text">{{article.GetCategory}}</span>
+        <br>
+        <span class="glyphicon glyphicon-tags icon"></span>
+        <span class="icon-text">
           {% for tag in article.GetTags %}{{tag.name}}{% if not forloop.last %},{% endif %}{% endfor %}
         </span>
     </p>
