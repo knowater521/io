@@ -49,15 +49,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">XUS</a>
+                <a class="navbar-brand {% if nbar == 'index' %}active{% endif %}" href="{% url 'index' %}">XUS</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="{% if nbar == 'index' %}active{% endif %}">
-                        <a href="{% url 'index' %}"> POSTS</a>
-                    </li>
                     <li class="{% if nbar == 'archives' %}active{% endif %}">
                         <a href="{% url 'archives' %}"> ARCHIVES</a>
                     </li>
