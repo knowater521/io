@@ -7,9 +7,7 @@
     <h2 class="blog-post-title"><a href="{% url "article_detail" slug=article.slug %}">{{article.title}}</a></h2>
     <p class="blog-post-meta">
         <span class="glyphicon glyphicon-calendar icon"></span>
-        <span class="icon-text">{{article.create_date|date:"Y/m/d"}}</span>
-        <span class="glyphicon glyphicon-time icon"></span>
-        <span class="icon-text">{{article.create_date|time:"H:i:s"}}</span>
+        <span class="icon-text">{{article.create_date|date:"Y/m/d H:i:s"}}</span>
         <span class="glyphicon glyphicon-user icon"></span> 
         <span class="icon-text"><a href="www.baidu.com">{{article.author}}</span></a>
     </p>
