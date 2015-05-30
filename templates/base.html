@@ -15,6 +15,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/search.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
@@ -61,9 +62,13 @@
                     <li class="{% if nbar == 'about' %}active{% endif %}">
                         <a href="{% url 'about' %}"> About</a>
                     </li>
-					
-	            <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control col-lg-8" placeholder="Search...">
+				
+	            <form action="" class="navbar-form navbar-right search-form">
+                        <div class="form-group has-feedback">
+            		    <label for="search" class="sr-only">Search</label>
+            		    <input type="text" class="form-control" name="search" id="search" placeholder="">
+              		    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	        </div>
                     </form>
 					
                 </ul>
