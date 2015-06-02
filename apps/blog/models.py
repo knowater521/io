@@ -75,6 +75,13 @@ class Article(models.Model):
     def GetCategory(self):
         return Article.objects.get(id=self.id).category
 
+class Config(models.Model):
+    title = models.CharField(max_length=255)
+    text = models.TextField(null=True)
+
+    def __unicode__(self):
+        return self.title
+
 class Test(models.Model):
     context = models.TextField(null=True) 
     def __unicode__(self):
