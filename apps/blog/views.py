@@ -48,7 +48,8 @@ def Works(req):
     return render_to_response('works.html', context)
 
 def About(req):
-    context = {'title':'sfsdxxxxf', 'nbar':'about'}
+    about = Config.objects.get(title='about')
+    context = {'about':about, 'nbar':'about'}
     return render_to_response('about.html', context)
 
 class ArticleDetailView(DetailView):
@@ -84,14 +85,4 @@ def TagHome(req, slug):
 
     context = {'articles':articles, 'nbar':'tags_home'}
     return render_to_response('tags_home.html', context)
-
-
-
-
-
-
-
-
-
-
 
