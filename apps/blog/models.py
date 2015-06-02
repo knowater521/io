@@ -77,7 +77,7 @@ class Article(models.Model):
 
 class Config(models.Model):
     title = models.CharField(max_length=255)
-    text = models.TextField(null=True)
+    text = MarkdownField(null=True)
 
     def __unicode__(self):
         return self.title
