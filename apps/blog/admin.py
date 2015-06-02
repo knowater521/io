@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Article, Category, Tag, Test
+from models import Article, Category, Tag
 
 from adminfiles.admin import FilePickerAdmin
 
