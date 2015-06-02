@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
-from .models import Article, Category, Tag
+from .models import Article, Category, Tag, Config
 
 def Index(req):
     articles = Article.objects.order_by('-create_date')
@@ -23,7 +23,7 @@ def Index(req):
 
 def Archives(req):
     articles = Article.objects.order_by('-create_date')
-
+ 
     years = list()
     articles_by_year = defaultdict(list)
     year = articles[0].create_date.year
@@ -43,7 +43,8 @@ def Archives(req):
     return render_to_response('archives.html', context)
 
 def Works(req):
-    context = {'title':'sfsdxxxxf', 'nbar':'works'}
+    works = Config.objects.get(title='works')
+    context = {'works':works, 'nbar':'works'}
     return render_to_response('works.html', context)
 
 def About(req):
