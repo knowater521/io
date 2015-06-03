@@ -4,38 +4,39 @@
 {% block content %}
 
 {% for article in articles %}
-<div class="blog-post">
-    <h2 class="blog-post-title"><a href="{% url "article_detail" slug=article.slug %}">{{article.title}}</a></h2>
-    <p class="blog-post-meta">
-        <span class="glyphicon glyphicon-calendar icon"></span>
-        <span class="icon-text">{{article.create_date|date:"Y/m/d H:i:s"}}</span>
-        <span class="glyphicon glyphicon-user icon"></span> 
-        <span class="icon-text"><a href="www.baidu.com">{{article.author}}</span></a>
-    </p>
+    {% if article.is_publish %}
+    <div class="blog-post">
+        <h2 class="blog-post-title"><a href="{% url "article_detail" slug=article.slug %}">{{article.title}}</a></h2>
+        <p class="blog-post-meta">
+            <span class="glyphicon glyphicon-calendar icon"></span>
+            <span class="icon-text">{{article.create_date|date:"Y/m/d H:i:s"}}</span>
+            <span class="glyphicon glyphicon-user icon"></span> 
+            <span class="icon-text"><a href="www.baidu.com">{{article.author}}</span></a>
+        </p>
 
-    <p>
-      {{article.text|markdown|safe|truncatechars:100|linebreaks}}
-    </p>
+        <p>
+            {{article.text|markdown|safe|truncatechars:100|linebreaks}}
+        </p>
+        <p>
+            <div class="readmore">
+                <a href="{% url "article_detail" slug=article.slug %}"><span class="glyphicon glyphicon-plus"></span> more</a>
+            </div>
+        </p>
 
-    <p>
-      <div class="readmore">
-        <a href="{% url "article_detail" slug=article.slug %}"><span class="glyphicon glyphicon-plus"></span> more</a>
-      </div>
-    </p>
+        <p class="blog-post-meta">
+            <span class="glyphicon glyphicon-folder-open icon"></span>
+            <span class="icon-text">{{article.GetCategory}}</span>
+            <br>
+            <span class="glyphicon glyphicon-tags icon"></span>
+            <span class="icon-text">
+                {% for tag in article.GetTags %}{{tag.name}}{% if not forloop.last %},{% endif %}{% endfor %}
+            </span>
+        </p>
 
-    <p class="blog-post-meta">
-        <span class="glyphicon glyphicon-folder-open icon"></span>
-        <span class="icon-text">{{article.GetCategory}}</span>
-        <br>
-        <span class="glyphicon glyphicon-tags icon"></span>
-        <span class="icon-text">
-            {% for tag in article.GetTags %}{{tag.name}}{% if not forloop.last %},{% endif %}{% endfor %}
-        </span>
-    </p>
+        <hr class="line">   
 
-    <hr class="line">   
-
-</div>
+    </div>
+    {% endif %}
 {% endfor %}
 
 <nav>
