@@ -61,7 +61,8 @@ class Article(models.Model):
     text = MarkdownField(null=True)
     is_publish = models.BooleanField(default=True)
     slug = models.SlugField(max_length=255, unique=True)
-
+    location = models.CharField(null=True,max_length=255)
+    
     class Meta:
         verbose_name_plural = '文章'
 

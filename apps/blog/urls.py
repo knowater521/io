@@ -9,5 +9,7 @@ urlpatterns = (
     url(r'^archives/', views.Archives, name='archives'),
     url(r'^works/', views.Works, name='works'),
     url(r'^about/', views.About, name='about'),
+    url(r'^book/', views.Book, name='book'),
+    url(r'^activity/', views.Activity, name='activity'),
     url(r'^', views.Index, name='index'),
 )

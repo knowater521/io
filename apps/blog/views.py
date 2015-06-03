@@ -52,6 +52,16 @@ def About(req):
     context = {'about':about, 'nbar':'about'}
     return render_to_response('about.html', context)
 
+def Book(req):
+    book = Config.objects.get(title='book')
+    context = {'book':book, 'nbar':'book'}
+    return render_to_response('book.html', context)
+
+def Activity(req):
+    activity = Config.objects.get(title='activity')
+    context = {'activity':activity, 'nbar':'activity'}
+    return render_to_response('activity.html', context)
+
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article.html'
