@@ -1,6 +1,8 @@
 <p>
     {% for category in categories %}
-        <li><a href="{{ category.GetAbsoluteURL }}">{{ category.name }}({{ category.GetArticleNum }})</a></li>
+        <li>
+            <a href="{{ category.GetAbsoluteURL }}">{{ category.name }}({{ category.GetArticleNum }})</a>
+        </li>
     {% endfor %}
 </p>
 
