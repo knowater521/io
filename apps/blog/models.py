@@ -19,7 +19,7 @@ class Category(models.Model):
         return self.name
 
     def GetArticleNum(self):
-	return Article.objects.filter(category=self).count()
+	return Article.objects.filter(category=self).filter(is_publish=True).count()
     
     def GetAbsoluteURL(self):
         return reverse('category_home', kwargs={'slug':self.slug})
