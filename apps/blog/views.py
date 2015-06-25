@@ -7,6 +7,12 @@ from collections import OrderedDict
 from .models import Article, Category, Tag, Config
 
 def Index(req):
+
+    static_page = req.get_full_path().split('/')[-1]
+    suffix = static_page.split('.')[-1]
+    if suffix == 'html' or suffix == 'htm':
+        return render_to_response(static_page)
+
     articles = Article.objects.order_by('-create_date')
     paginator = Paginator(articles, 6)
 
