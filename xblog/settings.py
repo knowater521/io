@@ -108,3 +108,4 @@ MEDIA_ROOT = '/data/media/'
 
 JQUERY_URL = 'js/jquery.min.js'
 
+MARKDOWN_EXTENSIONS = ['extra', 'codehilite']

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
-{% load django_markdown %}
+{% load django_markdown django_markdown_static %}
+
+{% block custom_styles %}
+  <link href="{% static "django_markdown/preview.css" %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
     <h2 class="blog-post-title">{{object.title}}</h2>
