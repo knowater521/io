@@ -70,7 +70,7 @@ def Activity(req):
 
 class ArticleDetail(DetailView):
     model = Article
-    template_name = 'article.html'
+    template_name = 'article_detail.html'
 
 def CategoryHome(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
