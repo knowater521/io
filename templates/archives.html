@@ -18,7 +18,7 @@
             </div>
             <div class="item-info-container">
                 <h1>
-                    <a href="{% url "article_detail" slug=article.slug %}">{{article.title}}</a>
+                    <a href="{{article.GetAbsoluteURL}}">{{article.title}}</a>
                 </h1>
                 <p class="item-description">
                     <!--<span class="glyphicon glyphicon-calendar icon"></span>-->
