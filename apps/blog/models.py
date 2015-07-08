@@ -76,6 +76,9 @@ class Article(models.Model):
     def GetCategory(self):
         return Article.objects.get(id=self.id).category
 
+    def GetAbsoluteURL(self):
+        return reverse('article', kwargs={'slug':self.slug})
+
 class Config(models.Model):
     title = models.CharField(max_length=255)
     text = MarkdownField(null=True)
