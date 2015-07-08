@@ -68,7 +68,7 @@ def Activity(req):
     context = {'activity':activity, 'nbar':'activity'}
     return render_to_response('activity.html', context)
 
-class ArticleDetailView(DetailView):
+class ArticleDetail(DetailView):
     model = Article
     template_name = 'article.html'
 
