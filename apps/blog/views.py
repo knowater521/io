@@ -85,7 +85,7 @@ def CategoryHome(req, slug):
         articles = paginator.page(paginator.num_pages)
 
     context = {'articles':articles, 'nbar':'categories_home'}
-    return render_to_response('categories_home.html', context)
+    return render_to_response('articles_of_category.html', context)
 
 def TagHome(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
