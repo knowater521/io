@@ -25,7 +25,7 @@ def Index(req):
         articles = paginator.page(paginator.num_pages)
 
     context = {'articles':articles, 'nbar':'index'}
-    return render_to_response('index.html', context)
+    return render_to_response('home.html', context)
 
 def Archives(req):
     articles = Article.objects.order_by('-create_date')
