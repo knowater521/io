@@ -100,5 +100,5 @@ def TagHome(req, slug):
         articles = paginator.page(paginator.num_pages)
 
     context = {'articles':articles, 'nbar':'tags_home'}
-    return render_to_response('tags_home.html', context)
+    return render_to_response('articles_of_tag.html', context)
 
