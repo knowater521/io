@@ -49,7 +49,7 @@ class Tag(models.Model):
         return min_font_size + tag_ref_num * (max_font_size - min_font_size) / max_tag_num
 
     def GetAbsoluteURL(self):
-        return reverse('tag_home', kwargs={'slug':self.slug})
+        return reverse('tag', kwargs={'slug':self.slug})
 
 class Article(models.Model):
     title = models.CharField(max_length=255)

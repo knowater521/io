@@ -32,27 +32,6 @@ def Home(req):
     context = {'articles':articles, 'nbar':'index'}
     return render_to_response('home.html', context)
 
-def Archives(req):
-    articles = Article.objects.order_by('-create_date')
- 
-    years = list()
-    articles_by_year = defaultdict(list)
-    year = articles[0].create_date.year
-    years.append(year)
-    for article in articles:
-        cur_year = article.create_date.year
-        articles_by_year[cur_year].append(article)
-        if year != cur_year:
-            year = cur_year 
-            years.append(year)
-
-    archives = OrderedDict()
-    for year in years:
-        archives[year] = articles_by_year[year]
-   
-    context = {'archives':archives, 'nbar':'archives'}
-    return render_to_response('archives.html', context)
-
 def Works(req):
     works = Config.objects.get(title='works')
     context = {'works':works, 'nbar':'works'}
@@ -73,7 +52,28 @@ def Activity(req):
     context = {'activity':activity, 'nbar':'activity'}
     return render_to_response('activity.html', context)
 
-def TagHome(req, slug):
+def Archives(req):
+    articles = Article.objects.order_by('-create_date')
+
+    years = list()
+    articles_by_year = defaultdict(list)
+    year = articles[0].create_date.year
+    years.append(year)
+    for article in articles:
+        cur_year = article.create_date.year
+        articles_by_year[cur_year].append(article)
+        if year != cur_year:
+            year = cur_year
+            years.append(year)
+
+    archives = OrderedDict()
+    for year in years:
+        archives[year] = articles_by_year[year]
+
+    context = {'archives':archives, 'nbar':'archives'}
+    return render_to_response('archives.html', context)
+
+def ArticlesOfTag(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
     articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
     paginator = Paginator(articles, 6)
