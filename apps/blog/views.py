@@ -24,11 +24,8 @@ def Home(req):
     suffix = static_page.split('.')[-1]
     if suffix == 'html' or suffix == 'htm':
         return render_to_response(static_page)
-
     articles = Article.objects.order_by('-create_date')
-    page_idx = req.GET.get('page')
-    articles = PagingForArticles(articles, 6, page_idx)
-
+    articles = PagingForArticles(articles, 6, req.GET.get('page'))
     context = {'articles':articles, 'nbar':'index'}
     return render_to_response('home.html', context)
 
@@ -54,7 +51,6 @@ def Activity(req):
 
 def Archives(req):
     articles = Article.objects.order_by('-create_date')
-
     years = list()
     articles_by_year = defaultdict(list)
     year = articles[0].create_date.year
@@ -76,30 +72,14 @@ def Archives(req):
 def ArticlesOfTag(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
     articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
-    paginator = Paginator(articles, 6)
-    page_idx = req.GET.get('page')
-    try:
-        articles = paginator.page(page_idx)
-    except PageNotAnInteger:
-        articles = paginator.page(1)
-    except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
-
+    articles = PagingForArticles(articles, 6, req.GET.get('page'))
     context = {'articles':articles, 'nbar':'tags_home'}
     return render_to_response('articles_of_tag.html', context)
 
 def ArticlesOfCategory(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
     articles = Article.objects.filter(category=cur_category).order_by('-create_date')
-    paginator = Paginator(articles, 6)
-    page_idx = req.GET.get('page')
-    try:
-        articles = paginator.page(page_idx)
-    except PageNotAnInteger:
-        articles = paginator.page(1)
-    except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
-
+    articles = PagingForArticles(articles, 6, req.GET.get('page'))
     context = {'articles':articles, 'nbar':'categories_home'}
     return render_to_response('articles_of_category.html', context)
 
