@@ -41,6 +41,10 @@
 
 <nav>
     <ul class="pagination">
+        {% if not articles.has_other_pages %}
+            sfjlsdjfljskfl
+        {% endif %}
+
         <li>
             {% if articles.has_previous %}
                 <a href="?page={{ articles.previous_page_number }}" aria-label="Previous">
