@@ -72,13 +72,13 @@
 			</ul>
 		    </li>
 	        </ul>
-	        <form action="" class="navbar-form navbar-left search-form">
+	        <!--<form action="" class="navbar-form navbar-left search-form">
                     <div class="form-group has-feedback">
                         <label for="search" class="sr-only">Search</label>
                         <input type="text" class="form-control" name="search" id="search" placeholder="">
                         <span class="glyphicon glyphicon-search form-control-feedback"></span>
             	    </div>
-                </form>
+                </form>-->
             </div>
 	</div>
     </nav>
@@ -93,6 +93,14 @@
             <!-- /.blog-main -->
     
             <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module">
+                  <h4>Search</h4>
+                  <form action="/search/" method="get">
+                    <input type="text" name="q">
+                    <input type="submit" value="GO!">
+                  </form>
+                </div>
+ 
                 <div class="sidebar-module">
                     <h4>Tag Cloud</h4>
                     <p class="tag-cloud">
