@@ -9,10 +9,10 @@ from .models import Article, Category, Tag, Config
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, get_object_or_404
 
-def PaginateArticles(articles, per_page, page_idx):
+def PaginateArticles(articles, per_page, page_num):
     paginator = Paginator(articles, per_page)
     try:
-        articles = paginator.page(page_idx)
+        articles = paginator.page(page_num)
     except PageNotAnInteger:
         articles = paginator.page(1)
     except EmptyPage:
