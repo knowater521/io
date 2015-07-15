@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -6,7 +9,7 @@ from collections import defaultdict
 from collections import OrderedDict
 from .models import Article, Category, Tag, Config
 
-def Index(req):
+def Home(req):
 
     static_page = req.get_full_path().split('/')[-1]
     suffix = static_page.split('.')[-1]
