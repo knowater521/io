@@ -9,23 +9,25 @@ from collections import defaultdict
 from collections import OrderedDict
 from .models import Article, Category, Tag, Config
 
-def Home(req):
-
-    static_page = req.get_full_path().split('/')[-1]
-    suffix = static_page.split('.')[-1]
-    if suffix == 'html' or suffix == 'htm':
-        return render_to_response(static_page)
-
-    articles = Article.objects.order_by('-create_date')
-    paginator = Paginator(articles, 6)
-
-    page_idx = req.GET.get('page')
+def PagingForArticles(articles, per_page, page_idx):
+    paginator = Paginator(articles, per_page)
     try:
         articles = paginator.page(page_idx)
     except PageNotAnInteger:
         articles = paginator.page(1)
     except EmptyPage:
         articles = paginator.page(paginator.num_pages)
+    return articles
+
+def Home(req):
+    static_page = req.get_full_path().split('/')[-1]
+    suffix = static_page.split('.')[-1]
+    if suffix == 'html' or suffix == 'htm':
+        return render_to_response(static_page)
+
+    articles = Article.objects.order_by('-create_date')
+    page_idx = req.GET.get('page')
+    articles = PagingForArticles(articles, 6, page_idx)
 
     context = {'articles':articles, 'nbar':'index'}
     return render_to_response('home.html', context)
