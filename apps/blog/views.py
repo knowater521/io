@@ -73,21 +73,6 @@ def Activity(req):
     context = {'activity':activity, 'nbar':'activity'}
     return render_to_response('activity.html', context)
 
-def CategoryHome(req, slug):
-    cur_category = get_object_or_404(Category, slug=slug)
-    articles = Article.objects.filter(category=cur_category).order_by('-create_date')
-    paginator = Paginator(articles, 6)
-    page_idx = req.GET.get('page')
-    try:
-        articles = paginator.page(page_idx)
-    except PageNotAnInteger:
-        articles = paginator.page(1)
-    except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
-
-    context = {'articles':articles, 'nbar':'categories_home'}
-    return render_to_response('articles_of_category.html', context)
-
 def TagHome(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
     articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
@@ -102,6 +87,21 @@ def TagHome(req, slug):
 
     context = {'articles':articles, 'nbar':'tags_home'}
     return render_to_response('articles_of_tag.html', context)
+
+def ArticlesOfCategory(req, slug):
+    cur_category = get_object_or_404(Category, slug=slug)
+    articles = Article.objects.filter(category=cur_category).order_by('-create_date')
+    paginator = Paginator(articles, 6)
+    page_idx = req.GET.get('page')
+    try:
+        articles = paginator.page(page_idx)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+
+    context = {'articles':articles, 'nbar':'categories_home'}
+    return render_to_response('articles_of_category.html', context)
 
 class ArticleDetail(DetailView):
     model = Article

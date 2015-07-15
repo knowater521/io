@@ -22,7 +22,7 @@ class Category(models.Model):
 	return Article.objects.filter(category=self).filter(is_publish=True).count()
     
     def GetAbsoluteURL(self):
-        return reverse('category_home', kwargs={'slug':self.slug})
+        return reverse('category', kwargs={'slug':self.slug})
 
 class Tag(models.Model):
     name = models.CharField(max_length=255, unique=True)
