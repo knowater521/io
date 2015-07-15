@@ -1,13 +1,13 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-from django.shortcuts import render, render_to_response, get_object_or_404
-from django.views.generic.detail import DetailView
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
+from django.views.generic.detail import DetailView
 from .models import Article, Category, Tag, Config
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render, render_to_response, get_object_or_404
 
 def PagingForArticles(articles, per_page, page_idx):
     paginator = Paginator(articles, per_page)
