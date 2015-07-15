@@ -41,32 +41,32 @@
 
 <nav>
     <ul class="pagination">
-        {% if not articles.has_other_pages %}
+        {% if articles.has_other_pages %}
         <li>
             {% if articles.has_previous %}
-                <a href="?page={{ articles.previous_page_number }}" aria-label="Previous">
-                    <span aria-hidden="true">
-                        &laquo;
-                    </span>
-                </a>
+            <a href="?page={{ articles.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">
+                    &laquo;
+                </span>
+            </a>
             {% endif %}
         </li>
 
         {% for page_num in articles.paginator.page_range %}
-            <li class="{% if page_num == articles.number %}active{% endif %}">
-                <a href="?page={{ page_num }}">{{ page_num }}
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
+        <li class="{% if page_num == articles.number %}active{% endif %}">
+            <a href="?page={{ page_num }}">{{ page_num }}
+                <span class="sr-only">(current)</span>
+            </a>
+        </li>
         {% endfor %}
 
         <li>
             {% if articles.has_next %}
-                <a href="?page={{ articles.next_page_number }}" aria-label="Next">
-                    <span aria-hidden="true">
-                        &raquo;
-                    </span>
-                </a>
+            <a href="?page={{ articles.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">
+                    &raquo;
+                </span>
+            </a>
             {% endif %}
         </li>
         {% endif %}
