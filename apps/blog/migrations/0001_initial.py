@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=255)),
                 ('author', models.CharField(default=b'anonymous', max_length=128)),
-                ('create_date', models.DateField(auto_now_add=True)),
+                ('create_date', models.DateField()),
                 ('modify_date', models.DateField(auto_now=True)),
                 ('text', django_markdown.models.MarkdownField(null=True)),
                 ('is_publish', models.BooleanField(default=True)),
@@ -48,6 +48,13 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name_plural': '\u6807\u7b7e',
             },
+        ),
+        migrations.CreateModel(
+            name='Test',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('context', models.TextField(null=True)),
+            ],
         ),
         migrations.AddField(
             model_name='article',

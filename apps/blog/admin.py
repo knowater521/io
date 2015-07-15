@@ -1,6 +1,14 @@
 from django.contrib import admin
-from . import models
+from models import Article, Category, Tag, Config
 
-admin.site.register(models.Article)
-admin.site.register(models.Category)
-admin.site.register(models.Tag)
+from adminfiles.admin import FilePickerAdmin
+
+admin.site.register(Category)
+admin.site.register(Tag)
+
+class PostAdmin(FilePickerAdmin):
+	adminfiles_fields = ('text',)
+
+admin.site.register(Article, PostAdmin)
+admin.site.register(Config, PostAdmin)
+

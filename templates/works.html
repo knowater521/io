@@ -1,9 +1,6 @@
 {% extends "base.html" %}
+{% load django_markdown %}
 
-{% block content %}
-    <li>xsvrd</li>
-    <li>herocard</li>
-    <li>xblog</li>
-    <li>xtravseral</li>
-    <li>xsharpsniffer</li>
+{% block main %}
+    {{works.text|markdown}}   
 {% endblock %}

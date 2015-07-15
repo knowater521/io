@@ -1,0 +1,4 @@
+django==1.8.1
+django-adminfiles==1.0.1
+sorl-thumbnail==12.2
+pillow==2.8.1

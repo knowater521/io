@@ -38,8 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.blog',
+    #'django.contrib.comments',
     'django_markdown',
+    'adminfiles',
+    'sorl.thumbnail',
+    'apps.blog',
+    'oembed',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,7 +88,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -96,4 +100,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/data/static/'
 
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = '/data/media/' 
+
+
+JQUERY_URL = 'js/jquery.min.js'
+
+MARKDOWN_EXTENSIONS = ['extra', 'codehilite']
