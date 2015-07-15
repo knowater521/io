@@ -73,10 +73,6 @@ def Activity(req):
     context = {'activity':activity, 'nbar':'activity'}
     return render_to_response('activity.html', context)
 
-class ArticleDetail(DetailView):
-    model = Article
-    template_name = 'article_detail.html'
-
 def CategoryHome(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
     articles = Article.objects.filter(category=cur_category).order_by('-create_date')
@@ -107,3 +103,6 @@ def TagHome(req, slug):
     context = {'articles':articles, 'nbar':'tags_home'}
     return render_to_response('articles_of_tag.html', context)
 
+class ArticleDetail(DetailView):
+    model = Article
+    template_name = 'article_detail.html'
