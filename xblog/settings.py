@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django_markdown',
     'adminfiles',
     'sorl.thumbnail',
+    'haystack',
     'apps.blog',
     'oembed',
 )
@@ -109,3 +110,12 @@ MEDIA_ROOT = '/data/media/'
 JQUERY_URL = 'js/jquery.min.js'
 
 MARKDOWN_EXTENSIONS = ['extra', 'codehilite']
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 6
