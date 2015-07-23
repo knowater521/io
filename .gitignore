@@ -1,2 +1,3 @@
 *.pyc
 *.out
+xblog/whoosh_index
