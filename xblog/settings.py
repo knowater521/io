@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'haystack',
     'apps.blog',
-    'oembed',
 )
 
 MIDDLEWARE_CLASSES = (
