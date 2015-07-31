@@ -43,7 +43,7 @@ class Tag(models.Model):
         tag_ref_num = self.GetArticleNum()
         # query blog_article_tag table
         # select max(tag_ref_num) from(select count(*) as tag_ref_num from blog_article_tag group by tag_id) as max_ref_num;
-        max_tag_num = Article.tag.through.objects.values('tag_id').annotate(tag_ref_num=Count('*')).aggregate(max_ref_num=Max('tag_ref_num'))['max_ref_num']
+        max_tag_num = Article.tag.through.objects.values('tag_id').annotate(tag_ref_num=Count('article')).aggregate(max_ref_num=Max('tag_ref_num'))['max_ref_num']
         if max_tag_num <= 0:
             tag_ref_num = 0
         return min_font_size + tag_ref_num * (max_font_size - min_font_size) / max_tag_num
