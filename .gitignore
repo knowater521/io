@@ -1,3 +1,4 @@
 *.pyc
 *.out
+apps/blog/migrations
 xblog/whoosh_index
