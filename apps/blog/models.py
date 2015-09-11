@@ -13,7 +13,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=255)
 
     class Meta:
-        verbose_name_plural = '类型'
+        verbose_name_plural = 'Category'
 
     def __unicode__(self):
         return self.name
@@ -29,7 +29,7 @@ class Tag(models.Model):
     slug = models.SlugField(max_length=128, unique=True)
 
     class Meta:
-        verbose_name_plural = '标签'
+        verbose_name_plural = 'Tag'
 
     def __unicode__(self):
         return self.name
@@ -64,7 +64,7 @@ class Article(models.Model):
     location = models.CharField(null=True,max_length=255)
     
     class Meta:
-        verbose_name_plural = '文章'
+        verbose_name_plural = 'Article'
 
     def __unicode__(self):
         return self.title
