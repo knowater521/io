@@ -34,7 +34,7 @@ def Works(req):
     context = {'works':works, 'nbar':'works'}
     return render_to_response('works.html', context)
 
-def About(req):
+def Me(req):
     about = Config.objects.get(title='about')
     context = {'about':about, 'nbar':'about'}
     return render_to_response('me.html', context)
