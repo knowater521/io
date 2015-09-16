@@ -12,6 +12,8 @@ SECRET_KEY = 'abcdefghijklmnopqrstuvwxyz1234567890'
 DEBUG = TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
+
 # Application definition
 # ---------------------------------------------------------------------
 INSTALLED_APPS = (
@@ -21,11 +23,13 @@ INSTALLED_APPS = (
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'django.contrib.sites',
 	'django_markdown',
 	'adminfiles',
 	'sorl.thumbnail',
 	'haystack',
 	'apps.blog',
+	'django.contrib.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -36,6 +40,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'), )

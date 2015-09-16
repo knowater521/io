@@ -12,5 +12,5 @@ urlpatterns = (
     url(r'^about/', views.About, name='about'),
     url(r'^book/', views.Book, name='book'),
     url(r'^activity/', views.Activity, name='activity'),
-    url(r'^', views.Home, name='home'),
+    #url(r'^', views.Home, name='home'),
 )
