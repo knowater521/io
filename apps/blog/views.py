@@ -37,7 +37,7 @@ def Works(req):
 def About(req):
     about = Config.objects.get(title='about')
     context = {'about':about, 'nbar':'about'}
-    return render_to_response('about.html', context)
+    return render_to_response('me.html', context)
 
 def Book(req):
     book = Config.objects.get(title='book')
