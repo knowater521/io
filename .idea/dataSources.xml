@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3806374869">
+  <component name="DataSourceManagerImpl" format="xml" hash="4107978686">
     <data-source source="LOCAL" name="MySQL - blog@127.0.0.1" uuid="99a563bf-27cf-4206-b601-904dc0e13933">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -15,7 +15,7 @@
     <data-source source="LOCAL" name="Django default" uuid="80c6d178-27e0-4ca8-b6b4-a140708a47d4">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/blog</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/xblog</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/PyCharm30/jdbc-drivers/mysql-connector-license.txt</url>
