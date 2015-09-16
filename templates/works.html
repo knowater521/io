@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block main %}
+  {{works.text|markdown}}
+{% endblock %}

@@ -1,7 +1,14 @@
 from django.contrib import admin
-from .models import Article
+from models import Article, Category, Tag, Config
 
-class ArticleAdmin(admin.ModelAdmin):
-    date_hierarchy = 'create_timestamp'
+from adminfiles.admin import FilePickerAdmin
 
-admin.site.register(Article, ArticleAdmin)
+admin.site.register(Category)
+admin.site.register(Tag)
+
+class PostAdmin(FilePickerAdmin):
+	adminfiles_fields = ('text',)
+
+admin.site.register(Article, PostAdmin)
+admin.site.register(Config, PostAdmin)
+
