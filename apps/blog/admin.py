@@ -1,6 +1,5 @@
 from django.contrib import admin
 from models import Article, Category, Tag, Config
-
 from adminfiles.admin import FilePickerAdmin
 
 admin.site.register(Category)
