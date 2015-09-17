@@ -4,6 +4,7 @@ django-markdown
 django-haystack
 Whoosh
 jieba
+django-grappelli
 django-adminfiles==1.0.1
 sorl-thumbnail==12.2
 pillow==2.8.1
