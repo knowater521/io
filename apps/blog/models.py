@@ -7,6 +7,30 @@ from django.utils import timezone
 from django.core.urlresolvers import reverse
 import datetime
 
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    avatar = models.ImageField(upload_to='uploads/avatars', default='', blank=True)
+    biography = models.TextField(default='', blank=True)
+
+    def __unicode__(self):
+        return self.user.username
+
+
+def create_user_profile(sender, instance, created, **kwargs):
+    """Create the UserProfile when a new User is saved"""
+    if created:
+        profile = UserProfile()
+        profile.user = instance
+        profile.save()
+
+post_save.connect(create_user_profile, sender=User)
+
+
+
+
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
     desc = models.CharField(max_length=255, unique=True)

@@ -2408,6 +2408,7 @@
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id" table="auth_user_groups" schema="" catalog="xblog" columns="user_id"/>
       <exported-key name="auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id" table="auth_user_user_permissions" schema="" catalog="xblog" columns="user_id"/>
+      <exported-key name="blog_userprofile_user_id_1dd0cbad73b500da_fk_auth_user_id" table="blog_userprofile" schema="" catalog="xblog" columns="user_id"/>
       <exported-key name="django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id" table="django_admin_log" schema="" catalog="xblog" columns="user_id"/>
       <index name="username" unique="true" columns="username"/>
     </table>
@@ -2485,6 +2486,14 @@
       <exported-key name="blog_article_tag_tag_id_4687eb707f711bf5_fk_blog_tag_id" table="blog_article_tag" schema="" catalog="xblog" columns="tag_id"/>
       <index name="name" unique="true" columns="name"/>
       <index name="slug" unique="true" columns="slug"/>
+    </table>
+    <table name="blog_userprofile" schema="" catalog="xblog" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="avatar" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="biography" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="blog_userprofile_user_id_1dd0cbad73b500da_fk_auth_user_id" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="xblog" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="django_admin_log" schema="" catalog="xblog" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
