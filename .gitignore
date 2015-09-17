@@ -1,4 +1,5 @@
 *.pyc
 *.out
+*.bak
 apps/blog/migrations
 xblog/whoosh_index
