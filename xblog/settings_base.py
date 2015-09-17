@@ -43,7 +43,14 @@ MIDDLEWARE_CLASSES = (
 	#'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'), )
+TEMPLATE_LOADERS = (
+	'django.template.loaders.filesystem.Loader',
+	'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_DIRS = (
+	os.path.join(BASE_DIR, 'templates'),
+)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 ROOT_URLCONF = 'xblog.urls'
 WSGI_APPLICATION = 'xblog.wsgi.application'
