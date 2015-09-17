@@ -17,6 +17,7 @@ SITE_ID = 1
 # Application definition
 # ---------------------------------------------------------------------
 INSTALLED_APPS = (
+	'grappelli',
 	'django.contrib.admin',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
@@ -51,6 +52,12 @@ TEMPLATE_LOADERS = (
 TEMPLATE_DIRS = (
 	os.path.join(BASE_DIR, 'templates'),
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+	'django.contrib.auth.context_processors.auth',
+	"django.core.context_processors.request",
+)
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 ROOT_URLCONF = 'xblog.urls'
 WSGI_APPLICATION = 'xblog.wsgi.application'
