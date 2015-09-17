@@ -1,14 +1,14 @@
-{% extends "home.html" %}
+{% extends "blog/home.html" %}
 
 {% block main %}
 
 {% if query %}
   {% for result in page.object_list %}
-    {% include "article_info.html" with article=result.object %}
+    {% include "blog/article_info.html" with article=result.object %}
     {% empty %}<p>No results found !</p>
   {% endfor %}
 
-  {% include "articles_pagination.html" with is_query_result=True %}
+  {% include "blog/articles_pagination.html" with is_query_result=True %}
 
 {% else %}
 <p>No search query given !</p>

@@ -27,27 +27,27 @@ def Home(req):
     articles = Article.objects.order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
     context = {'articles':articles, 'nbar':'index'}
-    return render_to_response('home.html', context)
+    return render_to_response('blog/home.html', context)
 
 def Works(req):
     works = Config.objects.get(title='works')
     context = {'works':works, 'nbar':'works'}
-    return render_to_response('works.html', context)
+    return render_to_response('blog/works.html', context)
 
 def Me(req):
     about = Config.objects.get(title='about')
     context = {'about':about, 'nbar':'about'}
-    return render_to_response('me.html', context)
+    return render_to_response('blog/me.html', context)
 
 def Book(req):
     book = Config.objects.get(title='book')
     context = {'book':book, 'nbar':'book'}
-    return render_to_response('book.html', context)
+    return render_to_response('blog/book.html', context)
 
 def Activity(req):
     activity = Config.objects.get(title='activity')
     context = {'activity':activity, 'nbar':'activity'}
-    return render_to_response('activity.html', context)
+    return render_to_response('blog/activity.html', context)
 
 def Archives(req):
     articles = Article.objects.order_by('-create_date')
@@ -67,22 +67,22 @@ def Archives(req):
         archives[year] = articles_by_year[year]
 
     context = {'archives':archives, 'nbar':'archives'}
-    return render_to_response('archives.html', context)
+    return render_to_response('blog/archives.html', context)
 
 def ArticlesOfTag(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
     articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
     context = {'articles':articles, 'nbar':'tags_home'}
-    return render_to_response('articles_of_tag.html', context)
+    return render_to_response('blog/articles_of_tag.html', context)
 
 def ArticlesOfCategory(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
     articles = Article.objects.filter(category=cur_category).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
     context = {'articles':articles, 'nbar':'categories_home'}
-    return render_to_response('articles_of_category.html', context)
+    return render_to_response('blog/articles_of_category.html', context)
 
 class ArticleDetail(DetailView):
     model = Article
-    template_name = 'article_detail.html'
+    template_name = 'blog/article_detail.html'

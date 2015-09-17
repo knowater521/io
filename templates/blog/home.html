@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+{% load django_markdown %}
+
+{% block main %}
+{% for article in articles %}
+  {% include "blog/article_info.html" with article=article %}
+{% endfor %}
+
+{% include "blog/articles_pagination.html" with is_query_result=False page=articles%}
+
+{% endblock main %}
