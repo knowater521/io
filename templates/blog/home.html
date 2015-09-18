@@ -1,6 +1,10 @@
 {% extends "blog/base.html" %}
 {% load django_markdown %}
 
+{% block breadcrumb_nav %}
+<li class="active">Home</li>
+{% endblock breadcrumb_nav %}
+
 {% block main %}
 {% for article in articles %}
     {% include "blog/article_info.html" with article=article myinfo=myinfo%}

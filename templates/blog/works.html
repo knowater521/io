@@ -1,6 +1,11 @@
 {% extends "blog/base.html" %}
 {% load django_markdown %}
 
+{% block breadcrumb_nav %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li class="active">Works</li>
+{% endblock breadcrumb_nav %}
+
 {% block main %}
   {{works.text|markdown}}
 {% endblock %}
