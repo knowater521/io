@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 
-class Me(models.Model):
+class MyInfo(models.Model):
 	name = models.CharField(max_length=128, default='unknown')
 	birthday = models.DateField(auto_now_add=False, default=datetime.datetime.now)
 	GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'),)
