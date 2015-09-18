@@ -1,5 +1,5 @@
-from django.db import models
 import datetime
+from django.db import models
 
 class MyInfo(models.Model):
 	name = models.CharField(max_length=128, default='unknown')
@@ -15,3 +15,15 @@ class MyInfo(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class MyWorks(models.Model):
+	name = models.CharField(max_length=128, default='io')
+	homepage = models.CharField(max_length=256, default='www.iolala.com')
+	desc = models.TextField(null=True, default='This is a ...')
+
+	class Meta:
+		verbose_name_plural = 'Works'
+
+	def __unicode__(self):
+		return self.name
+
