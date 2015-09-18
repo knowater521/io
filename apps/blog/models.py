@@ -77,7 +77,7 @@ class Tag(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=255)
-    author = models.CharField(max_length=128, default='anonymous')
+    author = models.CharField(max_length=128, default='anonymous', editable=False)
     create_date = models.DateTimeField(auto_now_add=False)
     modify_date = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category)
