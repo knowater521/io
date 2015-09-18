@@ -1,1 +1,7 @@
 {% extends "blog/home.html" %}
+
+{% block breadcrumb_nav %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'home' %}">Category</a></li>
+<li class="active">{{ cur_category.name }}</li>
+{% endblock breadcrumb_nav %}

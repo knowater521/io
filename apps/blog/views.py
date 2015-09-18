@@ -81,7 +81,7 @@ def ArticlesOfCategory(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
     articles = Article.objects.filter(category=cur_category).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
-    context = {'articles':articles, 'nbar':'categories_home'}
+    context = {'articles':articles, 'cur_category':cur_category, 'nbar':'categories_home'}
     return render_to_response('blog/articles_of_category.html', context)
 
 class ArticleDetail(DetailView):
