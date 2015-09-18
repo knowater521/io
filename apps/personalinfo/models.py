@@ -8,6 +8,7 @@ class MyInfo(models.Model):
 	gender = models.CharField(max_length=64, default='Male', choices=GENDER_CHOICES)
 	email = models.EmailField(max_length=64, default='example@iolala.com')
 	qq = models.CharField(max_length=64, default='1234567890', verbose_name='QQ')
+	is_show_qq = models.BooleanField(default=True)
 
 	class Meta:
 		verbose_name_plural = 'ME'
