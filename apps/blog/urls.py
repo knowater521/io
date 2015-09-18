@@ -7,9 +7,9 @@ urlpatterns = (
     url(r'^category/(?P<slug>[-\w]+)/$', views.ArticlesOfCategory, name='category'),
     url(r'^tag/(?P<slug>[-\w]+)/$', views.ArticlesOfTag, name='tag'),
     url(r'^$', views.Home, name='home'),
-    url(r'^archives/', views.Archives, name='archives'),
-    url(r'^works/', views.Works, name='works'),
-    url(r'^me/', views.Me, name='me'),
+    url(r'^archives$', views.Archives, name='archives'),
+    url(r'^works$', views.Works, name='works'),
+    url(r'^me$', views.Me, name='me'),
     url(r'^book/', views.Book, name='book'),
     url(r'^activity/', views.Activity, name='activity'),
 )
