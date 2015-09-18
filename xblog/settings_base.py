@@ -30,6 +30,7 @@ INSTALLED_APPS = (
 	'sorl.thumbnail',
 	'haystack',
 	'apps.blog',
+	'apps.personalinfo',
 	#'django.contrib.flatpages',
 )
 
