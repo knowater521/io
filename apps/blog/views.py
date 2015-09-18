@@ -1,11 +1,11 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-
 from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
 from django.views.generic.detail import DetailView
-from .models import Article, Category, Tag, Config
+from models import Article, Category, Tag, Config
+from apps.personalinfo.models import MyInfo
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, get_object_or_404
 
@@ -26,7 +26,8 @@ def Home(req):
         return render_to_response(static_page)
     articles = Article.objects.order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
-    context = {'articles':articles, 'nbar':'index'}
+    myinfo = MyInfo.objects.order_by('id')[0]
+    context = {'articles':articles, 'myinfo':myinfo, 'nbar':'index'}
     return render_to_response('blog/home.html', context)
 
 def Works(req):
