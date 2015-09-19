@@ -50,6 +50,16 @@ def Activity(req):
     context = {'activity':activity, 'nbar':'activity'}
     return render_to_response('blog/activity.html', context)
 
+def TagOverview(req):
+    tags = Tag.objects
+    context = {'tags':tags}
+    return render_to_response('blog/tag_overview.html', context)
+
+def CategoryOverview(req):
+    categories = Category.objects
+    context = {'categories':categories}
+    return render_to_response('blog/category_overview.html', context)
+
 def Archives(req):
     articles = Article.objects.order_by('-create_date')
     years = list()
