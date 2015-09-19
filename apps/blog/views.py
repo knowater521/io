@@ -74,14 +74,16 @@ def ArticlesOfTag(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
     articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
-    context = {'articles':articles, 'nbar':'tags_home'}
+    myinfo = MyInfo.objects.order_by('id')[0]
+    context = {'articles':articles, 'cur_tag':cur_tag, 'myinfo':myinfo, 'nbar':'tags_home'}
     return render_to_response('blog/articles_of_tag.html', context)
 
 def ArticlesOfCategory(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
     articles = Article.objects.filter(category=cur_category).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
-    context = {'articles':articles, 'cur_category':cur_category, 'nbar':'categories_home'}
+    myinfo = MyInfo.objects.order_by('id')[0]
+    context = {'articles':articles, 'cur_category':cur_category, 'myinfo':myinfo, 'nbar':'categories_home'}
     return render_to_response('blog/articles_of_category.html', context)
 
 class ArticleDetail(DetailView):

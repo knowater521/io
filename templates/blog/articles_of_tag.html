@@ -1,2 +1,7 @@
 {% extends "blog/home.html" %}
 
+{% block breadcrumb_nav %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'home' %}">Tag</a></li>
+<li class="active">{{ cur_tag.name }}</li>
+{% endblock breadcrumb_nav %}
