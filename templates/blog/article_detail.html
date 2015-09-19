@@ -5,6 +5,12 @@
   <link href="{% static "django_markdown/preview.css" %}" rel="stylesheet">
 {% endblock %}
 
+{% block breadcrumb_nav %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'home' %}">Article</a></li>
+<li class="active">{{ object.slug }}</li>
+{% endblock breadcrumb_nav %}
+
 {% block main %}
     <h2 class="blog-post-title">{{object.title}}</h2>
     {{ object.text | markdown }}
