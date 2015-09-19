@@ -4,8 +4,9 @@ from . import views
 urlpatterns = (
     url(r'^article/(?P<slug>\S+)/$', views.ArticleDetail.as_view(), name='article_ex'),
     url(r'^article/(?P<slug>\S+)$', views.ArticleDetail.as_view(), name='article'),
-    url(r'^category/(?P<slug>[-\w]+)/$', views.ArticlesOfCategory, name='category'),
-    url(r'^tag/(?P<slug>[-\w]+)/$', views.ArticlesOfTag, name='tag'),
+    url(r'^category/(?P<slug>[-\w]+)/$', views.ArticlesOfCategory, name='articles_of_category'),
+    url(r'^tag/(?P<slug>[-\w]+)/$', views.ArticlesOfTag, name='articles_of_tag'),
+    #url(r'^tag$', views.ArticlesOfTag, name='tag'),
     url(r'^$', views.Home, name='home'),
     url(r'^archives$', views.Archives, name='archives'),
     url(r'^works$', views.Works, name='works'),
