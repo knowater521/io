@@ -31,8 +31,8 @@ post_save.connect(create_user_profile, sender=User)
 
 class Category(models.Model):
     name = models.CharField(max_length=255, null=False, unique=True)
-    description = models.CharField(max_length=255, null=True)
     slug = models.SlugField(max_length=255, null=False, unique=True)
+    description = models.CharField(max_length=255, null=True)
 
     class Meta:
         verbose_name_plural = 'Category'
