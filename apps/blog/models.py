@@ -31,7 +31,7 @@ post_save.connect(create_user_profile, sender=User)
 
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    desc = models.CharField(max_length=255, unique=True)
+    description = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255)
 
     class Meta:
@@ -49,7 +49,7 @@ class Category(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=128, unique=True)
-    desc = models.CharField(max_length=255, unique=True)
+    #desc = models.CharField(max_length=255, unique=True)
 
     class Meta:
         verbose_name_plural = 'Tag'
