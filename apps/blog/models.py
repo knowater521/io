@@ -47,9 +47,9 @@ class Category(models.Model):
         return reverse('articles_of_category', kwargs={'slug':self.slug})
 
 class Tag(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    slug = models.SlugField(max_length=128, unique=True)
-    #desc = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255, null=False, unique=True)
+    slug = models.SlugField(max_length=128, null=False, unique=True)
+    description = models.CharField(max_length=255, null=True)
 
     class Meta:
         verbose_name_plural = 'Tag'
