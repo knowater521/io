@@ -62,8 +62,12 @@ def TagOverview(req):
     return render_to_response('blog/tag_overview.html', context)
 
 def CategoryOverview(req):
-    categories = Category.objects
-    context = {'categories':categories}
+    categories = Category.objects.all()
+    category_table = dict()
+    for category in categories:
+        category_table[category.id] = (category.GetArticleNum(), category.id, category)
+    order_table = sorted(category_table.items(), key=operator.itemgetter(1, 1), reverse=True)
+    context = {'categories':categories, 'order_table':order_table}
     return render_to_response('blog/category_overview.html', context)
 
 def Archives(req):

@@ -7,6 +7,30 @@
 {% endblock breadcrumb_nav %}
 
 {% block main %}
-
-
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>description</th>
+            <th>articles_num</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in order_table %}
+        <tr>
+            <td scope="row">
+                {{ forloop.counter }}
+            </td>
+            <td>
+                <a href="{{ item.1.2.GetAbsoluteURL }}">
+                    {{ item.1.2.name }}
+                </a>
+            </td>
+            <td>{{ item.1.2.desc }}</td>
+            <td>{{ item.1.2.GetArticleNum }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 {% endblock main %}
