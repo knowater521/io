@@ -3,6 +3,8 @@
 from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
+from django.db.models import Count
+import operator
 from django.views.generic.detail import DetailView
 from models import Article, Category, Tag, Config
 from apps.personalinfo.models import MyInfo
@@ -51,8 +53,12 @@ def Activity(req):
     return render_to_response('blog/activity.html', context)
 
 def TagOverview(req):
-    tags = Tag.objects
-    context = {'tags':tags}
+    tags = Tag.objects.all()
+    tag_table = dict()
+    for tag in tags:
+        tag_table[tag.id] = (tag.GetArticleNum(), tag.id, tag)
+    order_table = sorted(tag_table.items(), key=operator.itemgetter(1, 1), reverse=True)
+    context = {'tags':tags, 'order_table':order_table}
     return render_to_response('blog/tag_overview.html', context)
 
 def CategoryOverview(req):
