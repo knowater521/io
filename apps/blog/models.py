@@ -30,9 +30,9 @@ post_save.connect(create_user_profile, sender=User)
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=256, unique=True)
-    desc = models.CharField(max_length=256, unique=True)
-    slug = models.SlugField(max_length=256)
+    name = models.CharField(max_length=255, unique=True)
+    desc = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255)
 
     class Meta:
         verbose_name_plural = 'Category'
@@ -47,9 +47,9 @@ class Category(models.Model):
         return reverse('articles_of_category', kwargs={'slug':self.slug})
 
 class Tag(models.Model):
-    name = models.CharField(max_length=256, unique=True)
+    name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=128, unique=True)
-    desc = models.CharField(max_length=256, unique=True)
+    desc = models.CharField(max_length=255, unique=True)
 
     class Meta:
         verbose_name_plural = 'Tag'
@@ -75,7 +75,7 @@ class Tag(models.Model):
         return reverse('articles_of_tag', kwargs={'slug':self.slug})
 
 class Article(models.Model):
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=255)
     author = models.CharField(max_length=128, default='anonymous', editable=False)
     create_date = models.DateTimeField(auto_now_add=False)
     modify_date = models.DateTimeField(auto_now=True)
@@ -83,8 +83,8 @@ class Article(models.Model):
     tag = models.ManyToManyField(Tag)
     text = MarkdownField(null=True)
     is_publish = models.BooleanField(default=True)
-    slug = models.SlugField(max_length=256, unique=True)
-    location = models.CharField(null=True,max_length=256)
+    slug = models.SlugField(max_length=255, unique=True)
+    location = models.CharField(null=True,max_length=255)
     
     class Meta:
         verbose_name_plural = 'Article'
@@ -103,7 +103,7 @@ class Article(models.Model):
         return reverse('article', kwargs={'slug':self.slug})
 
 class Config(models.Model):
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=255)
     text = MarkdownField(null=True)
 
     def __unicode__(self):
