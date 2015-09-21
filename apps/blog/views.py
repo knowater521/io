@@ -109,3 +109,7 @@ def ArticlesOfCategory(req, slug):
 class ArticleDetail(DetailView):
     model = Article
     template_name = 'blog/article_detail.html'
+
+def Error404(req):
+    context = {'works':'xx'}
+    return render_to_response('404.html', context)
