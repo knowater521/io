@@ -6,9 +6,13 @@
 {% endblock %}
 
 {% block breadcrumb_nav %}
-<li><a href="{% url 'home' %}">Home</a></li>
-<li><a href="{% url 'home' %}">Article</a></li>
-<li class="active">{{ object.slug }}</li>
+<div class="scp-breadcrumb">
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'home' %}">Article</a></li>
+        <li class="active">{{ object.slug }}</li>
+    </ul>
+</div>
 {% endblock breadcrumb_nav %}
 
 {% block main %}
