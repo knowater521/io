@@ -18,4 +18,4 @@ urlpatterns = [
 
 urlpatterns += url(r'^', include('apps.blog.urls')),
 
-handler404 = 'blog.views.Error404'
+handler404 = 'apps.blog.views.Error404'
