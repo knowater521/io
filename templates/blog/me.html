@@ -11,7 +11,5 @@
 {% endblock breadcrumb_nav %}
 
 {% block main %}
-    {{ request.build_absolute_uri }}
-    url={{ request.build_absolute_uri|urlencode }}
     {{ me.text | markdown }}
 {% endblock %}
