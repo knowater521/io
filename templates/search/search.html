@@ -1,9 +1,13 @@
 {% extends "blog/home.html" %}
 
 {% block breadcrumb_nav %}
-<li><a href="{% url 'home' %}">Home</a></li>
-<li><a href="{% url 'home' %}">Search</a></li>
-<li class="active">{{ query }}</li>
+<div class="scp-breadcrumb">
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'home' %}">Search</a></li>
+        <li class="active">{{ query }}</li>
+    </ul>
+</div>
 {% endblock breadcrumb_nav %}
 
 {% block main %}
