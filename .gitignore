@@ -1,5 +1,7 @@
+.idea/dataSources.ids
 *.pyc
 *.out
 *.bak
+*.iml
 apps/*/migrations
 xblog/whoosh_index
