@@ -111,5 +111,6 @@ class ArticleDetail(DetailView):
     template_name = 'blog/article_detail.html'
 
 def Error404(req):
-    context = {'works':'xx'}
+    req_url = req.path_info
+    context = {'req_url':req_url}
     return render_to_response('404.html', context)
