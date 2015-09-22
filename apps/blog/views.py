@@ -114,3 +114,8 @@ def Error404(req):
     req_url = req.path_info
     context = {'req_url':req_url}
     return render_to_response('404.html', context)
+
+def Error500(req):
+    req_url = req.path_info
+    context = {'req_url':req_url}
+    return render_to_response('500.html', context)
