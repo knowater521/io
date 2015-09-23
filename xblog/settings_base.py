@@ -30,6 +30,7 @@ INSTALLED_APPS = (
 	'haystack',
 	'apps.blog',
 	'apps.personalinfo',
+        'django_cleanup',
 	#'django.contrib.flatpages',
 )
 
