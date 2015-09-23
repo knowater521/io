@@ -11,5 +11,32 @@
 {% endblock breadcrumb_nav %}
 
 {% block main %}
-  {{works.text|markdown}}
-{% endblock %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>homepage</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for work in works %}
+        <tr>
+            <td scope="row">
+                {{ forloop.counter }}
+            </td>
+            <td>
+                {{ work.name }}
+            </td>
+            <td>
+                <a href="http://{{ work.homepage }}">
+                    {{ work.homepage }}
+                </a>
+            </td>
+            <td>{{ work.desc }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock main %}

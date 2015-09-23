@@ -7,7 +7,7 @@ from django.db.models import Count
 import operator
 from django.views.generic.detail import DetailView
 from models import Article, Category, Tag, Config
-from apps.personalinfo.models import MyInfo
+from apps.personalinfo.models import MyInfo, MyWorks
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, get_object_or_404
 
@@ -33,8 +33,8 @@ def Home(req):
     return render_to_response('blog/home.html', context)
 
 def Works(req):
-    works = Config.objects.get(title='works')
-    context = {'works':works, 'nbar':'works'}
+    myworks = MyWorks.objects.all()
+    context = {'works':myworks, 'nbar':'works'}
     return render_to_response('blog/works.html', context)
 
 def Me(req):
