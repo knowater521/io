@@ -5,3 +5,4 @@
 *.iml
 apps/*/migrations
 xblog/whoosh_index
+media/*
