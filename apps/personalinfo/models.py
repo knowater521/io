@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from storage import OverwriteStorage
 
 class MyInfo(models.Model):
 	name = models.CharField(max_length=128, default='unknown')
@@ -10,7 +11,7 @@ class MyInfo(models.Model):
 	qq = models.CharField(max_length=64, default='1234567890', verbose_name='QQ')
 	weibo = models.CharField(max_length=255, default='http://weibo.com', null=True, verbose_name='Weibo')
 	github = models.CharField(max_length=255, default='https://github.com', null=True, verbose_name='GitHub')
-	avator = models.ImageField(upload_to='avator/', null=True)
+	avator = models.ImageField(upload_to='avator/', storage=OverwriteStorage(), null=True)
 	is_show_qq = models.BooleanField(default=True)
 
 	class Meta:
