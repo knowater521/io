@@ -18,7 +18,6 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return self.user.username
 
-
 def create_user_profile(sender, instance, created, **kwargs):
     """Create the UserProfile when a new User is saved"""
     if created:
@@ -27,7 +26,6 @@ def create_user_profile(sender, instance, created, **kwargs):
         profile.save()
 
 post_save.connect(create_user_profile, sender=User)
-
 
 class Category(models.Model):
     name = models.CharField(max_length=255, null=False, unique=True)
@@ -84,7 +82,7 @@ class Article(models.Model):
     text = MarkdownField(null=True)
     is_publish = models.BooleanField(default=True)
     slug = models.SlugField(max_length=255, unique=True)
-    location = models.CharField(null=True,max_length=255)
+    location = models.CharField(null=True, max_length=255)
     
     class Meta:
         verbose_name_plural = 'Article'

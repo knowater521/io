@@ -38,8 +38,8 @@ def Works(req):
     return render_to_response('blog/works.html', context)
 
 def Me(req):
-    about = Config.objects.get(title='about')
-    context = {'about':about, 'nbar':'about'}
+    myinfo = MyInfo.objects.order_by('id')[0]
+    context = {'me':myinfo, 'nbar':'about'}
     return render_to_response('blog/me.html', context)
 
 def Book(req):
