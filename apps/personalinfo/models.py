@@ -8,6 +8,9 @@ class MyInfo(models.Model):
 	gender = models.CharField(max_length=64, default='Male', choices=GENDER_CHOICES)
 	email = models.EmailField(max_length=64, default='example@iolala.com')
 	qq = models.CharField(max_length=64, default='1234567890', verbose_name='QQ')
+	weibo = models.CharField(max_length=255, default='http://weibo.com', null=True, verbose_name='Weibo')
+	github = models.CharField(max_length=255, default='https://github.com', null=True, verbose_name='GitHub')
+	avator = models.ImageField(upload_to='avator/', null=True)
 	is_show_qq = models.BooleanField(default=True)
 
 	class Meta:
