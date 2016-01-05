@@ -33,7 +33,7 @@ def Home(req):
     return render_to_response('blog/home.html', context)
 
 def Works(req):
-    myworks = MyWorks.objects.order_by('order_number')
+    myworks = MyWorks.objects.order_by('-order_number')
     context = {'works':myworks, 'nbar':'works'}
     return render_to_response('blog/works.html', context)
 
