@@ -21,7 +21,9 @@ class MyInfo(models.Model):
 		return self.name
 
 class MyWorks(models.Model):
+	order_number = models.IntegerField(default=1)
 	name = models.CharField(max_length=128, default='io')
+	image_link = models.CharField(max_length=256, default='xx')
 	homepage = models.CharField(max_length=256, default='www.iolala.com')
 	desc = models.TextField(null=True, default='This is a ...')
 
