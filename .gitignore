@@ -1,4 +1,5 @@
 .idea/dataSources.ids
+.idea/workspace.xml
 *.pyc
 *.out
 *.bak
