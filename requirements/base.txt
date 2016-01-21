@@ -10,3 +10,4 @@ django-adminfiles==1.0.1
 sorl-thumbnail==12.2
 pillow==2.8.1
 django-cleanup==0.3.1
+django-templateaddons==0.1
