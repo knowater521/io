@@ -10,6 +10,7 @@ from models import Article, Category, Tag, Config
 from apps.personalinfo.models import MyInfo, MyWorks
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, get_object_or_404
+import urllib2
 
 def PaginateArticles(articles, per_page, page_num):
     paginator = Paginator(articles, per_page)
@@ -119,3 +120,8 @@ def Error500(req):
     req_url = req.path_info
     context = {'req_url':req_url}
     return render_to_response('500.html', context)
+
+def Proxy(req):
+    url = req.GET.get('p')
+    req = urllib2.Request(url)
+    return HttpResponse(urllib2.urlopen(req))

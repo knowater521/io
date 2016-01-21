@@ -14,4 +14,5 @@ urlpatterns = (
     url(r'^me$', views.Me, name='me'),
     url(r'^book/', views.Book, name='book'),
     url(r'^activity/', views.Activity, name='activity'),
+    url(r'^proxy/$', views.Proxy, name='proxy'),
 )
