@@ -27,7 +27,7 @@ def Home(req):
     suffix = static_page.split('.')[-1]
     if suffix == 'html' or suffix == 'htm':
         return render_to_response(static_page)
-    articles = Article.objects.order_by('-create_date')
+    articles = Article.objects.filter(is_publish=1).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
     myinfo = MyInfo.objects.order_by('id')[0]
     context = {'articles':articles, 'myinfo':myinfo, 'nbar':'index'}
