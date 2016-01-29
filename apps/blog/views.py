@@ -72,7 +72,7 @@ def CategoryOverview(req):
     return render_to_response('blog/category_overview.html', context)
 
 def Archives(req):
-    articles = Article.objects.order_by('-create_date')
+    articles = Article.objects.filter(is_publish=1).order_by('-create_date')
     years = list()
     articles_by_year = defaultdict(list)
     year = articles[0].create_date.year
