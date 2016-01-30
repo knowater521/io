@@ -3,7 +3,7 @@
  */
 
 body {
-  font-family: 'Arial,Helvetica,sans-serif';
+  font-family: 'Open Sans','Helvetica Neue',"Hiragino Sans GB",sans-serif, Arial,/*'Microsoft YaHei',*/Verdana,"BitStream vera Sans",Tahoma,Helvetica,Sans-serif;
   color: #555;
   margin-top: 50px;
 }
