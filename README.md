@@ -11,8 +11,9 @@ In a few minutes you'll be set up with a minimal, responsive blog like the one b
 ### Environmental preparations  
 
 The environment must be Python2.7 + Django1.7.1 + MySQL.
+Python installation refer to https://www.python.org/downloads
 
-The Python installation refer to https://www.python.org/downloads
+
 
 ```
 git clone https://github.com/xushvai/io.git  
