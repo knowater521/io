@@ -26,10 +26,7 @@ Install Python interface to MySQL
 ```
 apt-get install python-mysqldb  
 ```
-
-Installation of Python refer to https://www.python.org/downloads.   
-Installation of MySQL refer to http://www.mysql.com/downloads.   
-Installation of Django just do :   
+Install Django  
 ```
 sudo pip install django==1.7.1
 ```
