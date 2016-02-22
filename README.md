@@ -12,7 +12,7 @@ git clone https://github.com/xushvai/io.git
 ```
 
 ### Environmental preparations  
-The environment must be 'Python2.7 + Django1.7.1 + MySQL'.  
+The environment must be 'Python2.7(devel) + Django1.7.1 + MySQL'.  
 
 Installation of Python refer to https://www.python.org/downloads.   
 Installation of MySQL refer to http://www.mysql.com/downloads.   
