@@ -22,7 +22,9 @@ sudo pip install django==1.7.1
 ```
 Install other requirements : 
 ```
+python install_requirements.py   
 ```
+*(The location of the file 'install_requirements.py' is [io/install_requirements.py](./install_requirements.py))*
 
 
 
