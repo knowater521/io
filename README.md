@@ -6,12 +6,12 @@ In a few minutes you'll be set up with a minimal, responsive blog like the one b
 
 ## Quick Start  
 
-### Step 01) Clone repository  
+### Step 1) Clone repository  
 ```
 git clone https://github.com/xushvai/io.git  
 ```
 
-### Step 02) Environmental preparations  
+### Step 2) Environmental preparations  
 The environment should be 'Python2.7(devel) + Django1.7.1 + MySQL'.  
 
 Install Python development version :        
@@ -43,7 +43,7 @@ curl https://bootstrap.pypa.io/ez_setup.py -o - | python
 ```
 easy_install pip  
 ```
-### Step 03) Config Database   
+### Step 3) Config Database   
 Edit [xblog/settings_dev.py](xblog/settings_dev.py) to config database info.
 
 Example :   
@@ -66,7 +66,7 @@ python manage.py makemigrations
 python manage.py migrate  
 ```
 
-### Step 04) Run !
+### Step 4) Run !
 
 ```
 python manage.py runserver 0.0.0.0:8080  
@@ -77,7 +77,7 @@ nohup python manage.py runserver 0.0.0.0:8080&
 ```
 Now you can try http://127.0.0.1:8080 . 
   
-### Step 05) Publish your first blog post
+### Step 5) Publish your first blog post
 
 Create an admin account for first start : 
 ```
@@ -86,12 +86,7 @@ python manage.py createsuperuser
 For example, set username 'admin' and password '123456'.
 
 Then access http://127.0.0.1:8080/admin, type the username and password to login : 
-
-
-
-
-
-
+![2](docs/2.png)   
 
 
 
