@@ -46,7 +46,7 @@ easy_install pip
 ### Config Database   
 Edit [xblog/settings_dev.py](xblog/settings_dev.py) to config database info.
 
-Example 
+Example :   
 ```
 DATABASES['default']['NAME'] = 'xblog'
 DATABASES['default']['USER'] = 'root'
@@ -54,18 +54,13 @@ DATABASES['default']['PASSWORD'] = '123456'
 DATABASES['default']['HOST'] = '127.0.0.1'
 DATABASES['default']['PORT'] = '3306'
 ```
+You should create a database named 'xblog' in MySQL : 
+```
+mysql> create database xblog;  
+```
 
 
 
-
-
-
-
-Fork IO to your User Repository
-
-Fork this repo, then rename the repository to yourgithubusername.github.io.
-
-Your Jekyll blog will often be viewable immediately at <http://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2)
 
 ![Step 1](/images/step1.gif "Step 1")
 
