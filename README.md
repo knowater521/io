@@ -8,7 +8,7 @@ In a few minutes you'll be set up with a minimal, responsive blog like the one b
 
 ### Environmental preparations  
 
-The environment must be Python2.7 + Django1.7.1 + MySQL.  
+The environment must be 'Python2.7 + Django1.7.1 + MySQL'.  
 
 Python installation refer to https://www.python.org/downloads.   
 MySQL installation refer to http://www.mysql.com/downloads.  
@@ -17,12 +17,22 @@ Django installation just do:
 ```
 sudo pip install django==1.7.1
 ```
+If the 'pip' is not installed in your environment, follow the steps below to complete the installation:  
+```
+curl https://bootstrap.pypa.io/ez_setup.py -o - | python  
+```
+```
+easy_install pip  
+```
+
+
 ### Clone repository  
 
 ```
 git clone https://github.com/xushvai/io.git  
 ```
 
+### Config Database   
 
 
 
