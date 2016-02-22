@@ -6,12 +6,12 @@ In a few minutes you'll be set up with a minimal, responsive blog like the one b
 
 ## Quick Start  
 
-### Clone repository  
+### Step 01) Clone repository  
 ```
 git clone https://github.com/xushvai/io.git  
 ```
 
-### Environmental preparations  
+### Step 02) Environmental preparations  
 The environment should be 'Python2.7(devel) + Django1.7.1 + MySQL'.  
 
 Install Python development version :        
@@ -43,7 +43,7 @@ curl https://bootstrap.pypa.io/ez_setup.py -o - | python
 ```
 easy_install pip  
 ```
-### Config Database   
+### Step 03) Config Database   
 Edit [xblog/settings_dev.py](xblog/settings_dev.py) to config database info.
 
 Example :   
@@ -66,27 +66,19 @@ python manage.py makemigrations
 python manage.py migrate  
 ```
 
-![Step 1](/images/step1.gif "Step 1")
+### Step 04) Run !
 
-### Step 2) Customize and view your site
-
-Enter your site name, description, avatar and many other options by editing the _config.yml file. You can easily turn on Google Analytics tracking, Disqus commenting and social icons here too.
-
-Making a change to _config.yml (or any file in your repository) will force GitHub Pages to rebuild your site with jekyll. Your rebuilt site will be viewable a few seconds later at <http://yourgithubusername.github.io> - if not, give it ten minutes as GitHub suggests and it'll appear soon
-
-> There are 3 different ways that you can make changes to your blog's files:
-
-> 1. Edit files within your new username.github.io repository in the browser at GitHub.com (shown below).
-> 2. Use a third party GitHub content editor, like [Prose by Development Seed](http://prose.io). It's optimized for use with Jekyll making markdown editing, writing drafts, and uploading images really easy.
-> 3. Clone down your repository and make updates locally, then push them to your GitHub repository.
-
-![_config.yml](/images/config.png "_config.yml")
+```
+python manage.py runserver 0.0.0.0:8080  
+```
+or nonhup  
+```
+nohup python manage.py runserver 0.0.0.0:8080&
+```
   
-### Step 3) Publish your first blog post
+### Step 05) Publish your first blog post
 
-Edit `/_posts/2014-3-3-Hello-World.md` to publish your first blog post. This [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/) might come in handy.
 
-![First Post](/images/first-post.png "First Post")
 
 ## Questions?
 
