@@ -91,4 +91,8 @@ Then access http://127.0.0.1:8080/admin, type the username and password to login
 
 ## Questions?
 
-[Open an Issue](https://github.com/xushvai/io/issues/new) and let's chat!
+[Open an Issue](https://github.com/xushvai/io/issues/new) and let's chat!  
+
+## Resources  
+### Logo  
+![logo](docs/logo/logo128.png)    
