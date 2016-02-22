@@ -1,5 +1,3 @@
-![1](docs/1.png)
-
 ### Environment    
 
 Python2.7 + Django1.7.1 + MySQL
@@ -11,21 +9,19 @@ git clone https://github.com/xushvai/io.git
 ```
 
 
-# IO Now
+# IO 
 
 **IO** is a blog base on Python + Django ([IO Repository](https://github.com/xushvai/io))
 
 **Jekyll Now** makes it easier to create your Jekyll blog, by eliminating a lot of the up front setup.
 
-- You don't need to touch the command line
-- You don't need to install/configure ruby, rvm/rbenv, ruby gems :relaxed:
-- You don't need to install runtime dependancies like markdown processors, Pygments, etc
-- If you're on Windows, this will make setting up Jekyll a lot easier
-- It's easy to try out, you can just delete your forked repository if you don't like it
+In a few minutes you'll be set up with a minimal, responsive blog like the one below !  
 
-In a few minutes you'll be set up with a minimal, responsive blog like the one below giving you more time to spend on writing epic blog posts!
+![1](docs/1.png)
 
-![Jekyll Now Theme Screenshot](/images/jekyll-now-theme-screenshot.jpg "Jekyll Now Theme Screenshot")
+
+
+
 
 ## Quick Start
 
