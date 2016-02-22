@@ -1,31 +1,32 @@
-### Environment    
-
-Python2.7 + Django1.7.1 + MySQL
-
-
-
-```
-git clone https://github.com/xushvai/io.git  
-```
-
-
 # IO 
 
 **IO** is a blog base on Python + Django ([IO Repository](https://github.com/xushvai/io))
-
-**Jekyll Now** makes it easier to create your Jekyll blog, by eliminating a lot of the up front setup.
 
 In a few minutes you'll be set up with a minimal, responsive blog like the one below !  
 
 ![1](docs/1.png)
 
-
-
-
-
 ## Quick Start
 
-### Step 1) Fork Jekyll Now to your User Repository
+### Step 1) 
+
+Environment: Python2.7 + Django1.7.1 + MySQL
+
+```
+git clone https://github.com/xushvai/io.git  
+```
+
+```
+sudo pip install django==1.7.1
+```
+
+
+
+
+
+
+
+Fork IO to your User Repository
 
 Fork this repo, then rename the repository to yourgithubusername.github.io.
 
