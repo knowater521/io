@@ -29,7 +29,11 @@ def Home(req):
         return render_to_response(static_page)
     articles = Article.objects.filter(is_publish=1).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
-    myinfo = MyInfo.objects.order_by('id')[0]
+    myinfo = ''
+    try:
+        myinfo = MyInfo.objects.order_by('id')[0]
+    except IndexError:
+        pass
     context = {'articles':articles, 'myinfo':myinfo, 'nbar':'index'}
     return render_to_response('blog/home.html', context)
 
