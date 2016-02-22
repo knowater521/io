@@ -75,8 +75,23 @@ or nonhup
 ```
 nohup python manage.py runserver 0.0.0.0:8080&
 ```
+Now you can try http://127.0.0.1:8080 . 
   
 ### Step 05) Publish your first blog post
+
+Create an admin account for first start : 
+```
+python manage.py createsuperuser  
+```
+For example, set username 'admin' and password '123456'.
+
+Then access http://127.0.0.1:8080/admin, type the username and password to login : 
+
+
+
+
+
+
 
 
 
