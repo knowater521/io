@@ -20,7 +20,7 @@ Installation of Django just do :
 ```
 sudo pip install django==1.7.1
 ```
-Install other requirements : 
+Auto install other requirements : 
 ```
 python install_requirements.py   
 ```
