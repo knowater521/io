@@ -87,8 +87,7 @@ For example, set username 'admin' and password '123456'.
 
 Then access http://127.0.0.1:8080/admin, type the username and password to login : 
 ![2](docs/2.png)   
-
-
+![3](docs/3.png)  
 
 ## Questions?
 
