@@ -14,7 +14,7 @@ git clone https://github.com/xushvai/io.git
 ### Environmental preparations  
 The environment should be 'Python2.7(devel) + Django1.7.1 + MySQL'.  
 
-Install Python development version :      
+Install Python development version :        
 ```
 apt-get install python-dev    
 ```
@@ -43,12 +43,17 @@ curl https://bootstrap.pypa.io/ez_setup.py -o - | python
 ```
 easy_install pip  
 ```
-
-
-
-
 ### Config Database   
+Edit [xblog/settings_dev.py](xblog/settings_dev.py) to config database info.
 
+Example 
+```
+DATABASES['default']['NAME'] = 'xblog'
+DATABASES['default']['USER'] = 'root'
+DATABASES['default']['PASSWORD'] = '123456'
+DATABASES['default']['HOST'] = '127.0.0.1'
+DATABASES['default']['PORT'] = '3306'
+```
 
 
 
