@@ -58,9 +58,13 @@ You should create a database named 'xblog' in MySQL :
 ```
 mysql> create database xblog;  
 ```
-
-
-
+Finally, make models into your database schema : 
+```
+python manage.py makemigrations  
+```
+```
+python manage.py migrate  
+```
 
 ![Step 1](/images/step1.gif "Step 1")
 
