@@ -1,10 +1,8 @@
 # IO 
 
-**IO** is a blog base on Python + Django ([IO Repository](https://github.com/xushvai/io))
-
+**IO** is a blog base on Python + Django ([IO Repository](https://github.com/xushvai/io)).  
 In a few minutes you'll be set up with a minimal, responsive blog like the one below !  
-
-![1](docs/1.png)
+![1](docs/1.png)  
 
 ## Quick Start
 
@@ -12,14 +10,14 @@ In a few minutes you'll be set up with a minimal, responsive blog like the one b
 
 The environment must be Python2.7 + Django1.7.1 + MySQL.  
 
-Python installation refer to https://www.python.org/downloads  
-MySQL installation refer to http://www.mysql.com/downloads  
+Python installation refer to https://www.python.org/downloads.   
+MySQL installation refer to http://www.mysql.com/downloads.  
 
-Django installation just do  
+Django installation just do:  
 ```
 sudo pip install django==1.7.1
 ```
-
+### Clone repository  
 
 ```
 git clone https://github.com/xushvai/io.git  
