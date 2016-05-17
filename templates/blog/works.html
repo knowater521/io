@@ -1,6 +1,10 @@
 {% extends "blog/base.html" %}
 {% load django_markdown %}
 
+{% block custom_styles %}
+    <link href="/static/css/works.css" rel="stylesheet">
+{% endblock %}
+
 {% block breadcrumb_nav %}
 <div class="scp-breadcrumb">
     <ul class="breadcrumb">
