@@ -76,6 +76,7 @@
 .codehilite .vi { color: #000000 } /* Name.Variable.Instance */
 .codehilite .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
 
+
 .codehilitetable {
     background-color: #f7f8f8;
     display: block;
@@ -102,7 +103,7 @@
 }
 
 .codehilite {
-    margin: 0 0.3em 0 3.5em;
+    margin: 0;
 }
 
 .linenos pre {
@@ -113,4 +114,8 @@
 .codehilite pre {
     border: 0px;
     background-color: #f7f8f8;
+}
+
+td.code div:nth-child(1) {
+    margin: 0 0.3em 0 3.5em;
 }
