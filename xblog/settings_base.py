@@ -100,7 +100,7 @@ MEDIA_ROOT = '/data/media/'
 
 JQUERY_URL = 'js/jquery.min.js'
 
-MARKDOWN_EXTENSIONS = ['extra', 'codehilite']
+MARKDOWN_EXTENSIONS = ['fenced_code', 'extra', 'codehilite(linenums=True)']
 
 HAYSTACK_CONNECTIONS = {
     'default': {
