@@ -19,7 +19,7 @@
         </a>
     </p>
     <p>
-      {{ article.text | markdown | safe | truncatewords_html:20 }}
+      {{ article.text | markdown | safe | truncatewords_html:article.truncatewords_num }}
     </p>
     <p>
       <div class="readmore">
