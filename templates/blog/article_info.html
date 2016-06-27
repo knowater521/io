@@ -1,5 +1,9 @@
 {% load django_markdown %}
 
+{% block custom_styles %}
+    <link href="/static/css/django_markdown_preview.css" rel="stylesheet">
+{% endblock %}
+
 {% if article.is_publish %}
   <div class="blog-post">
     <h2 class="blog-post-title">
