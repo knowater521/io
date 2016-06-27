@@ -15,12 +15,12 @@ import urllib2
 def PaginateArticles(articles, per_page, page_num):
     paginator = Paginator(articles, per_page)
     try:
-        articles = paginator.page(page_num)
+        paging_articles = paginator.page(page_num)
     except PageNotAnInteger:
-        articles = paginator.page(1)
+        paging_articles = paginator.page(1)
     except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
-    return articles
+        paging_articles = paginator.page(paginator.num_pages)
+    return paging_articles
 
 def Home(req):
     static_page = req.get_full_path().split('/')[-1]
@@ -97,7 +97,7 @@ def Archives(req):
 
 def ArticlesOfTag(req, slug):
     cur_tag = get_object_or_404(Tag, slug=slug)
-    articles = Article.objects.filter(tag=cur_tag).order_by('-create_date')
+    articles = Article.objects.filter(tag=cur_tag).filter(is_publish=1).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
     myinfo = MyInfo.objects.order_by('id')[0]
     context = {'articles':articles, 'cur_tag':cur_tag, 'myinfo':myinfo, 'nbar':'tags_home'}
@@ -105,7 +105,7 @@ def ArticlesOfTag(req, slug):
 
 def ArticlesOfCategory(req, slug):
     cur_category = get_object_or_404(Category, slug=slug)
-    articles = Article.objects.filter(category=cur_category).order_by('-create_date')
+    articles = Article.objects.filter(category=cur_category).filter(is_publish=1).order_by('-create_date')
     articles = PaginateArticles(articles, 6, req.GET.get('page'))
     myinfo = MyInfo.objects.order_by('id')[0]
     context = {'articles':articles, 'cur_category':cur_category, 'myinfo':myinfo, 'nbar':'categories_home'}
