@@ -3,7 +3,9 @@ from django.db import models
 from storage import OverwriteStorage
 
 class MyInfo(models.Model):
+	pen_name = models.CharField(max_length=128, default='unknown')
 	name = models.CharField(max_length=128, default='unknown')
+	idea = models.TextField(null=True, default=' ... ')
 	birthday = models.DateField(auto_now_add=False, default=datetime.datetime.now)
 	GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'),)
 	gender = models.CharField(max_length=64, default='Male', choices=GENDER_CHOICES)
@@ -12,7 +14,11 @@ class MyInfo(models.Model):
 	weibo = models.CharField(max_length=255, default='http://weibo.com', null=True, verbose_name='Weibo')
 	github = models.CharField(max_length=255, default='https://github.com', null=True, verbose_name='GitHub')
 	avator = models.ImageField(upload_to='avator/', storage=OverwriteStorage(), null=True)
+	is_show_idea = models.BooleanField(default=True)
 	is_show_qq = models.BooleanField(default=True)
+	is_show_weibo = models.BooleanField(default=True)
+	is_show_github = models.BooleanField(default=True)
+	is_show_email = models.BooleanField(default=True)
 
 	class Meta:
 		verbose_name_plural = 'ME'

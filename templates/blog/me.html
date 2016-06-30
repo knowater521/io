@@ -13,7 +13,16 @@
 {% block main %}
     <img src="media/{{ me.avator }}" class="img-responsive" alt="Responsive image" style="height: 500px;">
     <p>Name: {{ me.name }}</p>
+    {% if me.is_show_email %}
     <p>EMail: {{ me.email }}</p>
+    {% endif %}
+    {% if me.is_show_github %}
     <p>GitHub: {{ me.github }}</p>
+    {% endif %}
+    {% if me.is_show_weibo %}
     <p>Weibo: {{ me.weibo }}</p>
+    {% endif %}
+    {% if me.is_show_idea %}
+        <p>Idea: {{ me.idea }}</p>
+    {% endif %}
 {% endblock main %}
