@@ -33,7 +33,7 @@
                     <!--<span class="glyphicon glyphicon-calendar icon"></span>-->
                     <!--<span class="icon-text">{{article.create_date|date:"H:i:s"}}</span>-->
                     <span class="glyphicon glyphicon-user icon"></span> 
-                    <span class="icon-text"><a href="www.baidu.com">{{article.author}}</span></a><br>
+                    <span class="icon-text"><a href="{% url 'me' %}">{{article.author}}</span></a><br>
                     <span class="glyphicon glyphicon-folder-close icon"></span>
                     <span class="icon-text">{{article.GetCategory}}</span><br>
                     <span class="glyphicon glyphicon-tags icon"></span>
