@@ -17,10 +17,21 @@
 {% endblock breadcrumb_nav %}
 
 {% block main %}
-    <h2 class="blog-post-title">{{object.title}}</h2>
-    {% replace search="div class=\"collapse\"" replacement="div class=\"collapse in\"" %}
-        {{ object.text | markdown }}
-    {% endreplace %}
+  <h2 class="blog-post-title">{{object.title}}</h2>
+    <p class="blog-post-meta">
+      <span class="glyphicon glyphicon-calendar icon"></span>
+      <span class="icon-text">
+        {{ object.create_date | date:"Y/m/d H:i:s" }}
+      </span>
+      <span class="glyphicon glyphicon-user icon"></span>
+      <span class="icon-text">
+        <a href="{% url 'me' %}">
+          <span>{{ object.author }}</span>
+        </a>
+    </p>
+  {% replace search="div class=\"collapse\"" replacement="div class=\"collapse in\"" %}
+    {{ object.text | markdown }}
+  {% endreplace %}
 
 <!-- disqus BEGIN -->
 <div id="disqus_thread"></div>
