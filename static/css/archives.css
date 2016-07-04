@@ -116,3 +116,7 @@ ul.scale-up-hover-list {
   /* padding-left: 1px; */
   font-size: 9px;
 }
+
+.tag-hover {
+  color: inherit;
+}

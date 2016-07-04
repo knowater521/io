@@ -35,10 +35,10 @@
                     <span class="glyphicon glyphicon-user icon"></span> 
                     <span class="icon-text"><a href="{% url 'me' %}">{{article.author}}</span></a><br>
                     <span class="glyphicon glyphicon-folder-close icon"></span>
-                    <span class="icon-text">{{article.GetCategory}}</span><br>
+                    <span class="icon-text"><a class="tag-hover" href="{{article.GetCategory.GetAbsoluteURL}}"><i>{{article.GetCategory}}</i></a></span></br>
                     <span class="glyphicon glyphicon-tags icon"></span>
                     <span class="icon-text">
-                        {% for tag in article.GetTags %}{{tag.name}}{% if not forloop.last %},{% endif %}{% endfor %}
+                      {% for tag in article.GetTags %}<a class="tag-hover" href="{{tag.GetAbsoluteURL}}"><i>{{tag.name}}</i></a>{% if not forloop.last %},{% endif %}{% endfor %}
                     </span>
                 </p>
             </div>
