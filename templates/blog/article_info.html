@@ -34,11 +34,11 @@
     </p>
     <p class="blog-post-meta">
       <span class="glyphicon glyphicon-folder-open icon"></span>
-      <span class="icon-text">{{ article.GetCategory }}</span>
+      <span class="icon-text"><a class="tag-hover" href="{{article.GetCategory.GetAbsoluteURL}}"><i>{{article.GetCategory}}</i></a></span>
       <br>
       <span class="glyphicon glyphicon-tags icon"></span>
       <span class="icon-text">
-        {% for tag in article.GetTags %}{{ tag.name }}{% if not forloop.last %},{% endif %}{% endfor %}
+        {% for tag in article.GetTags %}<a class="tag-hover" href="{{tag.GetAbsoluteURL}}"><i>{{tag.name}}</i></a>{% if not forloop.last %},{% endif %}{% endfor %}
       </span>
     </p>
     <hr class="line">
