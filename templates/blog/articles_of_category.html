@@ -3,9 +3,9 @@
 {% block breadcrumb_nav %}
 <div class="scp-breadcrumb">
     <ul class="breadcrumb">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'category_overview' %}">Category</a></li>
-        <li class="active">{{ cur_category.name }}</li>
+        <li><a href="{% url 'home' %}"><i>Home</i></a></li>
+        <li><a href="{% url 'category_overview' %}"><i>Category</i></a></li>
+        <li class="active"><i>{{ cur_category.name }}</i></li>
     </ul>
 </div>
 {% endblock breadcrumb_nav %}

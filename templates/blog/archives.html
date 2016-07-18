@@ -7,8 +7,8 @@
 {% block breadcrumb_nav %}
 <div class="scp-breadcrumb">
     <ul class="breadcrumb">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="active">Archives</li>
+        <li><a href="{% url 'home' %}"><i>Home</i></a></li>
+        <li class="active"><i>Archives</i></li>
     </ul>
 </div>
 {% endblock breadcrumb_nav %}
@@ -33,7 +33,7 @@
                     <!--<span class="glyphicon glyphicon-calendar icon"></span>-->
                     <!--<span class="icon-text">{{article.create_date|date:"H:i:s"}}</span>-->
                     <span class="glyphicon glyphicon-user icon"></span> 
-                    <span class="icon-text"><a href="{% url 'me' %}">{{article.author}}</span></a><br>
+                    <span class="icon-text"><a href="{% url 'me' %}"><i>{{article.author}}</i></span></a><br>
                     <span class="glyphicon glyphicon-folder-close icon"></span>
                     <span class="icon-text"><a class="tag-hover" href="{{article.GetCategory.GetAbsoluteURL}}"><i>{{article.GetCategory}}</i></a></span></br>
                     <span class="glyphicon glyphicon-tags icon"></span>
