@@ -3,12 +3,12 @@
 from django.db import models
 from django.db.models import Count, Max
 from django_markdown.models import MarkdownField
-from django.utils import timezone
 from django.core.urlresolvers import reverse
-import datetime
 
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+
+from apps.personalinfo.models import MyInfo
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
@@ -99,6 +99,11 @@ class Article(models.Model):
 
     def GetAbsoluteURL(self):
         return reverse('article', kwargs={'slug':self.slug})
+
+    def save(self, *args, **kwargs):
+        self.author = MyInfo.objects.order_by('id')[0].pen_name
+        super(Article, self).save(*args, **kwargs)
+        return;
 
 class Config(models.Model):
     title = models.CharField(max_length=255)
