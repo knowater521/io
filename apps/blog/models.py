@@ -28,6 +28,7 @@ def create_user_profile(sender, instance, created, **kwargs):
 post_save.connect(create_user_profile, sender=User)
 
 class Category(models.Model):
+    order_number = models.IntegerField(default=1)
     name = models.CharField(max_length=255, null=False, unique=True)
     slug = models.SlugField(max_length=255, null=False, unique=True)
     description = models.CharField(max_length=255, null=True)

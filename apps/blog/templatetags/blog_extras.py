@@ -6,7 +6,7 @@ register = template.Library()
 
 @register.inclusion_tag('blog/categories_list.html', takes_context=True)
 def GetCategories(context):
-	categories = Category.objects.all()
+	categories = Category.objects.order_by('-order_number')
 	return {'categories':categories}
 
 @register.inclusion_tag('blog/tags_cloud.html', takes_context=True)
