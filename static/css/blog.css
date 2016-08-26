@@ -184,16 +184,32 @@ h6, .h6 {
 /*
  * Footer
  */
-
 .blog-footer {
   padding: 40px 0;
   color: #999;
   text-align: center;
   background-color: #222;
   border-top: 1px solid #e5e5e5;
+  height: 155px; /* .push must be the same height as .footer */
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+.push {
+  height: 155px; /* .push must be the same height as .footer */
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 
 img {
@@ -201,7 +217,6 @@ img {
   height: auto;
   max-width: 100%;
 }
-
 
 div.navbar-findcond { background: #222; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 div.navbar-findcond a { color: #9d9d9d; }
