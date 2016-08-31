@@ -17,8 +17,8 @@
     </li>
 
     {% for page_num in page.paginator.page_range %}
-      {% if page.number > 4 %}
-        {% if page_num > page.number|add:"-4" %}
+      {% if page.number > 3 %}
+        {% if page_num > page.number|add:"-3" %}
           {% if page_num < page.number|add:"3" %}
             <li class="
               {% if page_num == page.number %}
@@ -29,7 +29,7 @@
             </li>
           {% endif %}
         {% endif %}
-      {% elif page_num < 7 %}
+      {% elif page_num < 6 %}
       <li {% if page_num == page.number %}class="active"{% endif %}>
         <a href="?{% if is_query_result %}q={{ query }}&amp;{% endif %}page={{ page_num }}">
           {{ page_num }}<span class="sr-only">(current)</span>
