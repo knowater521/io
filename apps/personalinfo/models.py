@@ -14,6 +14,7 @@ class MyInfo(models.Model):
 	weibo = models.CharField(max_length=255, default='http://weibo.com', null=True, verbose_name='Weibo')
 	github = models.CharField(max_length=255, default='https://github.com', null=True, verbose_name='GitHub')
 	avator = models.ImageField(upload_to='avator/', storage=OverwriteStorage(), null=True)
+	avator_link = models.CharField(max_length=128, default='me')
 	is_show_idea = models.BooleanField(default=True)
 	is_show_qq = models.BooleanField(default=True)
 	is_show_weibo = models.BooleanField(default=True)
