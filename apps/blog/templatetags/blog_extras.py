@@ -1,6 +1,5 @@
 from django import template
-from apps.blog.models import Category, Tag
-from random import shuffle
+from apps.blog.models import Category, Tag, Config
 
 register = template.Library()
 
@@ -14,5 +13,12 @@ def GetTags(context):
 	tags = Tag.objects.all().order_by('?')
 	return {'tags':tags}
 	
+@register.inclusion_tag('blog/copyright.html', takes_context=True)
+def GetCopyright(context):
+	try:
+		copyright = Config.objects.get(title='copyright')
+		return {'copyright':copyright}
+	except Config.DoesNotExist:
+		pass
 
 
