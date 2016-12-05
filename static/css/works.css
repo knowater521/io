@@ -1,3 +1,7 @@
-img {
+div.works img {
   max-width: none;
+}
+
+div.works p a {
+  color:#6c7277;
 }
