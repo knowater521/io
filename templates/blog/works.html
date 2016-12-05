@@ -22,11 +22,14 @@
           <img class="media-object" src="{{ work.image_link }}" alt="...">
         </a>
       </div>
-      <div class="media-body works">
+      <div class="media-body">
         <h4 class="media-heading">
-            <a href="{{ work.homepage }}" target="_blank">{{ work.name }}</a>
+          <a href="{{ work.homepage }}" target="_blank">{{ work.name }}</a>
         </h4>
           {{ work.desc | markdown }}
+        <div class="keytech">
+          {{ work.keytech | markdown }}
+        </div>
       </div>
     </div>
     <hr>

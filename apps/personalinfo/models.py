@@ -32,7 +32,8 @@ class MyWorks(models.Model):
 	name = models.CharField(max_length=128, default='io')
 	image_link = models.CharField(max_length=256, default='xx')
 	homepage = models.CharField(max_length=256, default='www.iolala.com')
-	desc = models.TextField(null=True, default='This is a ...')
+	desc = models.TextField(blank=True, default='This is a ...')
+	keytech = models.TextField(blank=True, default='Python,Django,MySQL')
 
 	class Meta:
 		verbose_name_plural = 'Works'
