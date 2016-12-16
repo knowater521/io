@@ -11,6 +11,7 @@ urlpatterns = (
     url(r'^$', views.Home, name='home'),
     url(r'^archives$', views.Archives, name='archives'),
     url(r'^works$', views.Works, name='works'),
+    url(r'^donates$', views.Donates, name='donates'),
     url(r'^me$', views.Me, name='me'),
     url(r'^book/', views.Book, name='book'),
     url(r'^activity/', views.Activity, name='activity'),

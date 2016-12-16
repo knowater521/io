@@ -7,7 +7,7 @@ from django.db.models import Count
 import operator
 from django.views.generic.detail import DetailView
 from models import Article, Category, Tag, Config
-from apps.personalinfo.models import MyInfo, MyWorks
+from apps.personalinfo.models import MyInfo, MyWorks, MyDonates
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, get_object_or_404
 import urllib2
@@ -41,6 +41,11 @@ def Works(req):
     myworks = MyWorks.objects.order_by('-order_number')
     context = {'works':myworks, 'nbar':'works'}
     return render_to_response('blog/works.html', context)
+
+def Donates(req):
+    mydonates = MyDonates.objects.order_by('-order_number')
+    context = {'donates':mydonates, 'nbar':'donates'}
+    return render_to_response('blog/donates.html', context)
 
 def Me(req):
     myinfo = MyInfo.objects.order_by('id')[0]

@@ -30,8 +30,8 @@ class MyInfo(models.Model):
 class MyWorks(models.Model):
 	order_number = models.IntegerField(default=1)
 	name = models.CharField(max_length=128, default='io')
-	image_link = models.CharField(max_length=256, default='xx')
-	homepage = models.CharField(max_length=256, default='www.iolala.com')
+	image_link = models.CharField(max_length=256, default='http://')
+	homepage = models.CharField(max_length=256, default='http://www.iolala.com')
 	desc = models.TextField(blank=True, default='This is a ...')
 	keytech = models.TextField(blank=True, default='Python,Django,MySQL')
 
@@ -41,3 +41,14 @@ class MyWorks(models.Model):
 	def __unicode__(self):
 		return self.name
 
+class MyDonates(models.Model):
+	order_number = models.IntegerField(default=1)
+	name = models.CharField(max_length=128, default='wechat')
+	desc = models.TextField(blank=True, default='Donate ...')
+	image_link = models.CharField(max_length=256, default='http://', verbose_name="QRCode link")
+
+	class Meta:
+		verbose_name_plural = 'Donates'
+
+	def __unicode__(self):
+		return self.name
