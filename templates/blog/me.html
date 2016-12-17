@@ -14,7 +14,14 @@
     <a href="{{ me.avator_link }}" target="_blank">
       <img src="media/{{ me.avator }}" class="img-responsive" alt="" style="height: 500px;">
     </a><br>
-    <p><i><b>· Name: </b>{{ me.name }} <a href="{% url 'donates' %}">donate</a></i></p>
+    <p>
+      <i>
+        <b>· Name: </b>{{ me.name }}&nbsp;&nbsp;
+          <a href="{% url 'donates' %}">
+            <i class="fa fa-money" aria-hidden="true"></i>
+          </a>
+      </i>
+    </p>
     {% if me.is_show_idea %}
         <p><i><b>· Idea: </b>{{ me.idea }}</i></p>
     {% endif %}
