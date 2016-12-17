@@ -14,7 +14,7 @@ class MyInfo(models.Model):
 	github = models.CharField(max_length=255, default='https://github.com', null=True, verbose_name='GitHub')
 	stackoverflow = models.CharField(max_length=255, default='http://', null=True, verbose_name='StackOverflow')
 	avator = models.ImageField(upload_to='avator/', storage=OverwriteStorage(), null=True)
-	avator_link = models.CharField(max_length=128, default='me')
+	avator_hyperlink = models.CharField(max_length=128, default='me')
 	is_show_idea = models.BooleanField(default=True)
 	is_show_qq = models.BooleanField(default=True)
 	is_show_email = models.BooleanField(default=True)
