@@ -13,7 +13,7 @@ class MyInfo(models.Model):
 	qq = models.CharField(max_length=64, default='1234567890', verbose_name='QQ')
 	github = models.CharField(max_length=255, default='https://github.com', null=True, verbose_name='GitHub')
 	stackoverflow = models.CharField(max_length=255, default='http://', null=True, verbose_name='StackOverflow')
-	avator = models.ImageField(upload_to='avator/', storage=OverwriteStorage(), null=True)
+	avator_local = models.ImageField(upload_to='avator/', storage=OverwriteStorage(), null=True)
 	avator_hyperlink = models.CharField(max_length=128, default='me')
 	is_show_idea = models.BooleanField(default=True)
 	is_show_qq = models.BooleanField(default=True)
