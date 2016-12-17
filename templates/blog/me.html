@@ -11,8 +11,12 @@
 {% endblock breadcrumb_nav %}
 
 {% block main %}
-    <a href="{{ me.avator_link }}" target="_blank">
-      <img src="media/{{ me.avator }}" class="img-responsive" alt="" style="height: 500px;">
+    <a href="{{ me.avator_hyperlink }}" target="_blank">
+    {% if me.is_show_local_avator %}
+      <img src="media/{{ me.avator_local }}" class="img-responsive" alt="" style="height: 500px;">
+    {% else %}
+      <img src="{{ me.avator_online }}" class="img-responsive" alt="" style="height: 500px;">
+    {% endif %}
     </a><br>
     <p>
       <i>
