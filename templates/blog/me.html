@@ -19,7 +19,7 @@
       <p><i><b>· Email: </b>{{ me.email }}</i></p>
     {% endif %}
     {% if me.is_show_github %}
-      <p><i><b>· GitHub: </b>{{ me.github }}</i></p>
+      <p><i><b>· GitHub: </b><a href="{{ me.github }}" target="_blank">{{ me.github|cut:"https://"|cut:"http://" }}</a></i></p>
     {% endif %}
     {% if me.is_show_weibo %}
       <p><i><b>· Weibo: </b>{{ me.weibo }}</i></p>
