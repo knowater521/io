@@ -15,20 +15,34 @@
       <img src="media/{{ me.avator }}" class="img-responsive" alt="" style="height: 500px;">
     </a><br>
     <p><i><b>· Name: </b>{{ me.name }} <a href="{% url 'donates' %}">donate</a></i></p>
+    {% if me.is_show_idea %}
+        <p><i><b>· Idea: </b>{{ me.idea }}</i></p>
+    {% endif %}
     {% if me.is_show_email %}
-      <p><i><b>· Email: </b>{{ me.email }}</i></p>
-    {% endif %}
-    {% if me.is_show_github %}
-      <p><i><b>· GitHub: </b><a href="{{ me.github }}" target="_blank">{{ me.github|cut:"https://"|cut:"http://" }}</a></i></p>
-    {% endif %}
-    {% if me.is_show_stackoverflow %}
-      <p><i><b>· StackOverflow: </b>
-        <a href="{{ me.stackoverflow }}" target="_blank">
-          {{ me.stackoverflow|cut:"https://"|cut:"http://" }}
-        </a></i>
+      <p><b>· <i class="fa fa-envelope" aria-hidden="true"></i></b>
+        <i>
+          <a href="{{ me.email }}" target="_blank">
+           {{ me.email }}
+          </a>
+        </i>
       </p>
     {% endif %}
-    {% if me.is_show_idea %}
-      <p><i><b>· Idea: </b>{{ me.idea }}</i></p>
+    {% if me.is_show_github %}
+      <p><b>· <i class="fa fa-github" aria-hidden="true"></i></b>
+        <i>
+          <a href="{{ me.github }}" target="_blank">
+           {{ me.github|cut:"https://"|cut:"http://" }}
+          </a>
+        </i>
+      </p>
+    {% endif %}
+    {% if me.is_show_stackoverflow %}
+      <p><b>· <i class="fa fa-stack-overflow" aria-hidden="true"></i></b>
+        <i>
+          <a href="{{ me.stackoverflow }}" target="_blank">
+           {{ me.stackoverflow|cut:"https://"|cut:"http://" }}
+          </a>
+        </i>
+      </p>
     {% endif %}
 {% endblock main %}
