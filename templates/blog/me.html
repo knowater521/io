@@ -21,8 +21,12 @@
     {% if me.is_show_github %}
       <p><i><b>· GitHub: </b><a href="{{ me.github }}" target="_blank">{{ me.github|cut:"https://"|cut:"http://" }}</a></i></p>
     {% endif %}
-    {% if me.is_show_weibo %}
-      <p><i><b>· Weibo: </b>{{ me.weibo }}</i></p>
+    {% if me.is_show_stackoverflow %}
+      <p><i><b>· StackOverflow: </b>
+        <a href="{{ me.stackoverflow }}" target="_blank">
+          {{ me.stackoverflow|cut:"https://"|cut:"http://" }}
+        </a></i>
+      </p>
     {% endif %}
     {% if me.is_show_idea %}
       <p><i><b>· Idea: </b>{{ me.idea }}</i></p>
