@@ -19,8 +19,8 @@
 </div>
 <br>
 
-<hr>
 {% for d in data %}
+  {% if forloop.last %}<hr>{% endif %}
   <li>
     <a href="/wiki/{{d.id|stringformat:"09d"}}{% for k in keys %}-{{k}}{% endfor %}">{{d}}</a>
   </li>
