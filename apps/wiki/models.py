@@ -112,14 +112,3 @@ class Config(models.Model):
 
     def __unicode__(self):
         return self.title
-
-class Wiki(models.Model):
-    title = models.CharField(max_length=255)
-    create_date = models.DateTimeField(auto_now_add=True)
-    text = models.TextField(default='', blank=False)
-
-    class Meta:
-        verbose_name_plural = 'Wiki'
-
-    def __unicode__(self):
-        return self.title

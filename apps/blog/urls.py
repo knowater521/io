@@ -16,4 +16,6 @@ urlpatterns = (
     url(r'^book/', views.Book, name='book'),
     url(r'^activity/', views.Activity, name='activity'),
     url(r'^proxy/$', views.Proxy, name='proxy'),
+    url(r'^wiki$', views.WK, name='wiki'),
+    url(r'^wiki/', views.WikiQueryOrDetail, name='wiki_query'),
 )

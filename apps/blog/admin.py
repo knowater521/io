@@ -3,7 +3,7 @@ from django.contrib.sites.models import Site
 from adminfiles.admin import FilePickerAdmin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User, Group
-from models import Article, Category, Tag, Config, UserProfile
+from models import Article, Category, Tag, Config, Wiki, UserProfile
 
 class ProfileInline(admin.StackedInline):
     model = UserProfile
@@ -37,12 +37,9 @@ admin.site.unregister(Group)
 admin.site.unregister(Site)
 admin.site.register(Tag)
 admin.site.register(Category)
+admin.site.register(Wiki)
 admin.site.register(Article, PostAdmin)
 admin.site.register(Config, PostAdmin)
 
 #admin.site.register(User, CustomUserAdmin)
 admin.site.register(User, MyAdmin)
-
-
-
-

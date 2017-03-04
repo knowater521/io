@@ -1,16 +1,15 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from collections import defaultdict
 from collections import OrderedDict
 from django.db.models import Count
 import operator
 from django.views.generic.detail import DetailView
-from models import Article, Category, Tag, Config, Wiki
+from models import Article, Category, Tag, Config
 from apps.personalinfo.models import MyInfo, MyWorks, MyDonates
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, get_object_or_404
-from django.db.models import Q
 import urllib2
 
 def PaginateArticles(articles, per_page, page_num):
@@ -39,9 +38,10 @@ def Home(req):
     return render_to_response('blog/home.html', context)
 
 def Works(req):
-    myworks = MyWorks.objects.order_by('-order_number')
-    context = {'works':myworks, 'nbar':'works'}
-    return render_to_response('blog/works.html', context)
+    # myworks = MyWorks.objects.order_by('-order_number')
+    # context = {'works':myworks, 'nbar':'works'}
+    # return render_to_response('blog/works.html', context)
+    return "sjfld"
 
 def Donates(req):
     mydonates = MyDonates.objects.order_by('-order_number')
@@ -52,33 +52,6 @@ def Me(req):
     myinfo = MyInfo.objects.order_by('id')[0]
     context = {'me':myinfo, 'nbar':'about'}
     return render_to_response('blog/me.html', context)
-
-def WK(req):
-    return render_to_response('blog/wiki.html')
-
-def WikiQueryOrDetail(req):
-    keys = []
-    result = ""
-    if req.method == 'GET':
-        if req.GET:# Search
-            keys = req.GET['q'].strip().split(' ')
-            keys = [i for i in keys if i != '']
-            if len(keys):
-			    queries = [Q(title__contains=k) for k in keys]
-			    args = queries.pop()
-			    for item in queries:
-				    args |= item
-			    result = Wiki.objects.filter(args)
-            context = {'keys':keys, 'data':result}
-            return render_to_response('blog/wiki_search_result.html', context)
-        else:# Detail
-            path = req.get_full_path()
-            l1 = path.split('/wiki/')[1].split('-')
-            id = l1[0]
-            keys = l1[1:]
-            detail = Wiki.objects.filter(id=id)[0]
-            context = {'keys':keys, 'data':detail}
-            return render_to_response('blog/wiki_detail.html', context)
 
 def Book(req):
     book = Config.objects.get(title='book')
@@ -148,10 +121,6 @@ class ArticleDetail(DetailView):
     model = Article
     template_name = 'blog/article_detail.html'
 
-class WikiDetail(DetailView):
-    model = Wiki
-    template_name = 'blog/wiki_detail.html'
-
 def Error404(req):
     req_url = req.path_info
     context = {'req_url':req_url}
@@ -161,8 +130,3 @@ def Error500(req):
     req_url = req.path_info
     context = {'req_url':req_url}
     return render_to_response('500.html', context)
-
-def Proxy(req):
-    url = req.GET.get('p')
-    req = urllib2.Request(url)
-    return HttpResponse(urllib2.urlopen(req))

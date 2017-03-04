@@ -111,25 +111,31 @@
       </div>
       <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
         <div class="sidebar-module">
+          {% block search %}
           <h4>Search</h4>
           <form action="/search/" method="get">
             <input type="text" name="q">
             <input type="submit" value="GO!">
           </form>
+          {%  endblock %}
         </div>
  
         <div class="sidebar-module">
+          {% block tag %}
           <h4>Tag Cloud</h4>
           <p class="tag-cloud">
             {% GetTags %}
           </p>
+          {% endblock %}
         </div>
                
         <div class="sidebar-module">
+          {% block category %}
           <h4>Category</h4>
           <ol class="list-unstyled">
             {% GetCategories %}
           </ol>
+          {% endblock %}
         </div>
       </div>
     </div>
