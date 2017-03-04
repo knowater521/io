@@ -1,4 +1,5 @@
 {% extends "blog/wiki.html" %}
+{% load nbsp %}
 
 {% block main %}
 <div class="row">
@@ -22,6 +23,6 @@
 <hr>
 <p><b>{{ data.title }}</b></p>
 <hr>
-<p>{{ data.text | linebreaks }}</p>
+{{ data.text | nbsp | linebreaks }}
 
 {% endblock %}
