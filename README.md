@@ -1,9 +1,8 @@
 # IO 
 
+[![GitHub watchers](https://img.shields.io/github/watchers/xushvai/io.svg?style=flat&label=Watch)](https://github.com/xushvai/io/watchers)
 [![GitHub stars](https://img.shields.io/github/stars/xushvai/io.svg?style=flat&label=Star)](https://github.com/xushvai/io/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/xushvai/io.svg?style=flat&label=Fork)](https://github.com/xushvai/io/fork)
-[![GitHub watchers](https://img.shields.io/github/watchers/xushvai/io.svg?style=flat&label=Watch)](https://github.com/xushvai/io/watchers)
-
 
 **IO** is a blog base on Python + Django ([IO Repository](https://github.com/xushvai/io)).  
 In a few minutes you'll be set up with a minimal, responsive blog like the one below !  
