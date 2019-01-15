@@ -4,8 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/xushvai/io.svg?style=popout&label=Star)](https://github.com/xushvai/io/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/xushvai/io.svg?style=popout&label=Fork)](https://github.com/xushvai/io/fork)
 
-**IO** is a blog base on Python + Django ([http://io.xus.io](http://io.xus.io)).   
-IO means, output the input content to the world.   
+**IO** is a blog base on Python + Django ([http://io.xus.io](http://io.xus.io)), IO means output the input content to the world.   
 In a few minutes you'll be set up with a minimal, responsive blog like the one below !  
 ![1](docs/1.png)  
 
