@@ -1,0 +1,8 @@
+title: io
+description: A blog base on python + django .
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-leap-day
+
+gems:
+  - jekyll-mentions
